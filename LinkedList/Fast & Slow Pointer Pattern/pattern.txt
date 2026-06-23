@@ -1,0 +1,4 @@
+this is the easiest set
+
+1) solve middle pointer fast= fast.next.next , slow= slow.next 
+2) revrse from the middle and its done

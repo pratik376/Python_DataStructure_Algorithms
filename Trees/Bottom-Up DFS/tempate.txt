@@ -1,0 +1,33 @@
+think about this 
+
+if curr.right
+
+if curr.left
+
+we are inserting left second so that it can process first
+
+class Solution:
+    def hasPathSum(self, root: Optional[TreeNode], targetSum: int) -> bool:
+
+
+       if not root:
+           return False 
+       
+       stack= [[root,root.val]]
+
+       while stack:
+           
+           curr, curr_sum= stack.pop()
+
+           if not curr.left and not curr.right:
+               
+               if curr_sum==targetSum:
+                   return True
+               
+           if curr.right:
+               stack.append([curr.right, curr.right.val+ curr_sum])
+           if curr.left:
+               stack.append([curr.left, curr.left.val + curr_sum])
+
+       return False           
+                   

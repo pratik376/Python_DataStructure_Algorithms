@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NN Visualizer</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<h1>🧠 Neural Network Visualizer</h1>
+
+<div class="toolbar">
+    <button onclick="addNeuron('input')">Add Input</button>
+    <button onclick="addNeuron('hidden')">Add Hidden</button>
+    <button onclick="addNeuron('output')">Add Output</button>
+    <button onclick="animateForward()">Forward</button>
+    <button onclick="startBackprop()">Backprop</button>
+    <button onclick="clearAll()">Clear</button>
+</div>
+
+<div class="main-container">
+    <div class="network-container">
+        <canvas id="canvas"></canvas>
+    </div>
+
+    <div class="calc-container">
+        <h2>Calculations</h2>
+        <div id="calc-content"></div>
+    </div>
+</div>
+
+<script src="/static/script.js"></script>
+</body>
+</html>
