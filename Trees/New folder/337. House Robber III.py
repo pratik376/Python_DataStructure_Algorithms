@@ -9,6 +9,8 @@ class TreeNode:
         self.val = val
         self.left = left
         self.right = right
+
+# other parts are still remaining to solve like problem 1 ,2, and 4
 class Solution:
     def rob(self, root: Optional[TreeNode]) -> int:
 
