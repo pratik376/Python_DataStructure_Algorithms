@@ -7,6 +7,8 @@ class TreeNode:
         self.val = val
         self.left = left
         self.right = right
+
+# this is the solution class
 class Solution:
     def maxAncestorDiff(self, root: Optional[TreeNode]) -> int:
         
