@@ -19,11 +19,13 @@ class Solution:
             if not node:
                 return 
             
-            self.answer= max(self.answer, left_zig,right_zig)
+           
 
     
             dfs(node.right, 0, left_zig+1)
             dfs(node.left, right_zig+1, 0)
+
+            self.answer= max(self.answer, left_zig,right_zig)
            
         
         dfs(root, 0,0)
