@@ -51,8 +51,9 @@ class Solution:
             for nei in neighbours:
 
                 if nei and nei not in visted:
-                    visted.add(nei)
+                    
                     queue.append((nei, distance+1))
+                    visted.add(nei)
         
         return answer
 
