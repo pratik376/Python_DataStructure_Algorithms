@@ -31,15 +31,17 @@ class Codec:
 
         def dfs():
 
-            if vals[self.index]=='N':
-                self.index+=1
-                return None
-            
-            root=TreeNode(int(vals[self.index]))
+            root= TreeNode(int(vals[self.index]),[])
             self.index+=1
-            root.left= dfs()
-            root.right=dfs()
+
+            children_count= len(vals[self.index])
+            self.index+=1
+
+            for _ in range(children_count):
+                root.children.append(dfs())
+            
             return root
+
         return dfs()
 
 
