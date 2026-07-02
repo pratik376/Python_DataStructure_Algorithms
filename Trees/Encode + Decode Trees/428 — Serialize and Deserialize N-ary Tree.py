@@ -16,8 +16,9 @@ class Codec:
                 return
             
             res.append(str(node.val))
-            dfs(node.left)
-            dfs(node.right)
+            res.append(str(len(node.children)))
+            for child in node.children:
+                dfs(child)
         dfs(root)
 
         return ",".join(res)
