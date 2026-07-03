@@ -43,5 +43,6 @@ class Solution:
             
             elif abs(self.left_stack[-1]- target) < abs(self.right_stack[-1] - target):
                 answer.append(self.left_stack.pop())
-                
+            else:
+                answer.append(self.right_stack.pop())
         return answer
