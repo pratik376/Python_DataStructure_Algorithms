@@ -38,7 +38,7 @@ class Solution:
             if not self.left_stack:
                 answer.append(self.right_stack.pop())
             
-            if not self.right_stack:
+            elif not self.right_stack:
                 answer.append(self.left_stack.pop())
             
             elif abs(self.left_stack[-1]- target) < abs(self.right_stack[-1] - target):
