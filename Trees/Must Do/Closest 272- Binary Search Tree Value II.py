@@ -33,11 +33,15 @@ class Solution:
 
         self.right_stack= self.right_stack[::-1]
 
-        while len(answer) != k:
+        while len(answer) <k:
 
-            if abs(self.left_stack[-1] - target) < abs(self.right_stack[-1] - target):
-
-                answer.append(self.left_stack.pop())
-            else:
+            if not self.left_stack:
                 answer.append(self.right_stack.pop())
+            
+            if not self.right_stack:
+                answer.append(self.left_stack.pop())
+            
+            elif abs(self.left_stack[-1]- target) < abs(self.right_stack[-1] - target):
+                answer.append(self.left_stack.pop())
+                
         return answer
