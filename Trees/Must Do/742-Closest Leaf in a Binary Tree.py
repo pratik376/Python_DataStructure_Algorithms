@@ -32,7 +32,8 @@ class Solution:
         target_node=self.target_node
 
         q=deque([target_node])
-        visited= set(target_node)
+        visited= set()
+        visited.add(target_node)
        
 
         while q:
