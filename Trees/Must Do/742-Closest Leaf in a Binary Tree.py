@@ -31,7 +31,7 @@ class Solution:
 
         q=deque(target_node)
         visited= set(target_node)
-        answer=0
+       
 
         while q:
 
