@@ -1,5 +1,5 @@
 from typing import Optional
-from collections import deque
+from collections import deque, defaultdict
 
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
@@ -8,17 +8,17 @@ class TreeNode:
         self.right = right
 class Solution:
     
-    def findClosestLeaft(self, root: Optional[TreeNode],k : int) -> int:
+    def findClosestLeaf(self, root: Optional[TreeNode],k : int) -> int:
         
-        parent= {}
-        target_node=None
+        parent=defaultdict(TreeNode)
+        self.target_node=None
 
         def find_parents(node):
 
             if not node:
                 return
             if node.val == k:
-                target_node=node
+                self.target_node=node
 
             if node.left:
                 parent[node.left]=node
@@ -29,7 +29,9 @@ class Solution:
             find_parents(node.right)
         find_parents(root)
 
-        q=deque(target_node)
+        target_node=self.target_node
+
+        q=deque([target_node])
         visited= set(target_node)
        
 
@@ -40,19 +42,30 @@ class Solution:
             if not curr.left and not curr.right:
                 return curr.val
 
-            if curr.left and curr.left not in visited:
-                q.append(curr.left)
-                visited.add(curr.left)
+
+            guests=[curr.left , curr.right, parent[curr]]
+
+            for guest in guests:
+
+                if guest and guest not in visited:
+                    q.append(guest)
+                    visited.add(guest)
+
+           
+
+            # if curr.left and curr.left not in visited:
+            #     q.append(curr.left)
+            #     visited.add(curr.left)
             
-            if curr.right and curr.right not in visited:
-                q.append(curr.right)
-                visited.add(curr.right)
+            # if curr.right and curr.right not in visited:
+            #     q.append(curr.right)
+            #     visited.add(curr.right)
             
-            if parent[curr] and parent[curr] not in visited:
-                q.append(parent[curr])
-                visited.add(parent[curr])
+            # if parent[curr] and parent[curr] not in visited:
+            #     q.append(parent[curr])
+            #     visited.add(parent[curr])
         
-        return -1
+      
 
 
 
