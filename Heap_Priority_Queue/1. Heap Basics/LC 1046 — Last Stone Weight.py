@@ -7,22 +7,18 @@ class Solution:
         if len(stones) < 2:
             return stones[0]
         
-        heap=[]
+        heap=stones[:]
 
-     
-        
-        for i in range(len(stones)):
-
-            heapq.heapify_max(heap, stones[i])
+        heapq.heapify_max(heap) # it takes one list na donly one argument
         
         while len(heap)>=2:
             x= heapq.heappop_max(heap)
             y= heapq.heappop_max(heap)
 
             if x != y:
-                heapq.heappush_max(x-y)
+                heapq.heappush_max(heap,x-y)
         
-        return heap[0] if len(heap) else 0
+        return heap[0] if heap else 0
         
 
         
