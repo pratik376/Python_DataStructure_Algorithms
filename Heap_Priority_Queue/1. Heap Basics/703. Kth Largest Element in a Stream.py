@@ -7,10 +7,11 @@ class KthLargest:
     def __init__(self, k: int, nums: List[int]):
         self.k=k
         self.nums=nums
-
-        self.nums=[-val for val in self.nums]
         heapq.heapify(self.nums)
-        
+
+        while len(heapq)> self.k:
+            heapq.heappop()
+
 
     def add(self, val: int) -> int:
         heapq.heappush(self.nums,-val)
