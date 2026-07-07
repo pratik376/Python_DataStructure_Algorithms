@@ -9,7 +9,7 @@ class KthLargest:
         self.nums=nums
         heapq.heapify(self.nums)
 
-        while len(heapq)> self.k:
+        while len(self.nums)> self.k:
             heapq.heappop(self.nums)
 
 
