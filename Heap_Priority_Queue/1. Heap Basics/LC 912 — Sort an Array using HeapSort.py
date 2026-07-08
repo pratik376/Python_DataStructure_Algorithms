@@ -1,14 +1,14 @@
-import heapq
+# import heapq
 
-class Solution:
-    def sortArray(self, nums: list[int]) -> list[int]:
+# class Solution:
+#     def sortArray(self, nums: list[int]) -> list[int]:
 
-        answer=[]
+#         answer=[]
 
-        heapq.heapify(nums)
+#         heapq.heapify(nums)
 
-        while len(nums)> 0:
-            answer.append(heapq.heappop(nums))
+#         while len(nums)> 0:
+#             answer.append(heapq.heappop(nums))
         
-        return answer
+#         return answer
 
