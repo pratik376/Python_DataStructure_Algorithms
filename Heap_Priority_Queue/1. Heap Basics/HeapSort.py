@@ -10,8 +10,6 @@ def heap_sort(arr):
     return result
 
 
-nums = [5, 3, 8, 1, 2]
-print(heap_sort(nums))
 
 def heapify(arr, n, i):
     largest = i
