@@ -18,9 +18,9 @@ class Solution:
 
           heapq.heappush(gifts,cal_val ) # logn
           k-=1
-       gifts=[ -val for val in gifts] # O(log(n))
+     
 
-       return sum(gifts)
+       return -sum(gifts)
 
         
 
