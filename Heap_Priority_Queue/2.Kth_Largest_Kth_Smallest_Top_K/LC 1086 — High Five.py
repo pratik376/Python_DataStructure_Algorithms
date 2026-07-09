@@ -46,6 +46,28 @@ class Solution:
             answer.append([student_id, avg])
 
         return answer
+
+class Solution:
+    def highFive(self, items: List[List[int]]) -> List[List[int]]:
+       
+       score_dict= defaultdict(list)
+
+       for id, marks in items:
+          heapq.heappush(score_dict[id],marks)
+
+          if len(score_dict[id]) > 5:
+             heapq.heappop(score_dict[id])
+       
+       answer=[]
+
+       for id in sorted(score_dict.keys()):
+          
+          avg=sum(score_dict[id])//5
+          answer.append([id,avg])
+        
+       return answer
+        
+     
      
 
 
