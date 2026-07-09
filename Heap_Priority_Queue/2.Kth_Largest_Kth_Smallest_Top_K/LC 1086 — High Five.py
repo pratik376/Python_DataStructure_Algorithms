@@ -20,9 +20,11 @@ class Solution:
 
     while count>0:
      sum+=heapq.heappop_max(val)
-     k-=1
+     count-=1
     
     answer.append([key, sum/5])
+
+    return answer
 
     
      
