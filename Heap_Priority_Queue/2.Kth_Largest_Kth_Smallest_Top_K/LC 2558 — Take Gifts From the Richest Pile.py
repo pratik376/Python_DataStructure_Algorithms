@@ -7,18 +7,18 @@ class Solution:
 
         
 
-       gifts=[ -val for val in gifts]
+       gifts=[ -val for val in gifts] # 0(N)
 
-       heapq.heapify(gifts)
+       heapq.heapify(gifts)  # O(N)
 
        while k >0:
-          largets= -heapq.heappop(gifts)
+          largets= -heapq.heappop(gifts) # O(log(n))
 
-          cal_val=-math.floor(math.sqrt(largets))
+          cal_val=-math.floor(math.sqrt(largets)) 
 
-          heapq.heappush(gifts,cal_val )
+          heapq.heappush(gifts,cal_val ) # logn
           k-=1
-       gifts=[ -val for val in gifts]
+       gifts=[ -val for val in gifts] # O(log(n))
 
        return sum(gifts)
 
