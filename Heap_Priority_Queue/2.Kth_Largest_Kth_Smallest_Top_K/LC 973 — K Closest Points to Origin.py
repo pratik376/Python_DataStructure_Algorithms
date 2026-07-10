@@ -3,6 +3,7 @@
 from typing import List
 import heapq
 import math
+# first i code then i solve
 
 class Solution:
     def kClosest(self, points: List[List[int]], k: int) -> List[List[int]]:
