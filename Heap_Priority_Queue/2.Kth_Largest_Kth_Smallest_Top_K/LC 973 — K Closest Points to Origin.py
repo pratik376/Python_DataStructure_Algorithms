@@ -20,7 +20,7 @@ class Solution:
 
             if len(mini_heap) > k:
                 heapq.heappop(mini_heap)
-        return mini_heap[0]
+        return mini_heap[0][1]
 
 
 
