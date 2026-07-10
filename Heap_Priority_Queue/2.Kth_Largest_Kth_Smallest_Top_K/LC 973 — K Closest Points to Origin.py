@@ -16,7 +16,7 @@ class Solution:
 
             sq_distance= math.sqrt( x ** 2 + y **2)
 
-            heapq.heappush(mini_heap, (sq_distance,point))
+            heapq.heappush(mini_heap, (-sq_distance,point))
 
             if len(mini_heap) > k:
                 heapq.heappop(mini_heap)
