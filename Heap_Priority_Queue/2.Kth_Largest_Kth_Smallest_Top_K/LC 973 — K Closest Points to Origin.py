@@ -20,7 +20,7 @@ class Solution:
 
             if len(mini_heap) > k:
                 heapq.heappop(mini_heap)
-        return mini_heap[0][1]
+        return [point for distance, point in mini_heap]
 
 
 
