@@ -4,7 +4,7 @@ from collections import defaultdict, Counter
 
 
 class Solution:
-    def topKFrequent(self, nums: List[str], k: int) -> List[int]:
+    def topKFrequent(self, nums: List[str], k: int) -> List[str]:
 
         freq=Counter(nums)
         mini_heap =[]
