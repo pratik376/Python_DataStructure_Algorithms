@@ -23,17 +23,10 @@ class Solution:
     def topKFrequent(self, words: List[str], k: int) -> List[str]:
 
         freq=Counter(words)
-        mini_heap =[]
 
-
-        for string,count in freq.items():
-
-            heapq.heappush(mini_heap,(count,string))
-
-            if len(mini_heap) > k:
-                heapq.heappop(mini_heap)
+        return sorted(freq.keys(), key=lambda w : (-freq[w],w))[:k]
         
-        return [num for count, num in mini_heap]
+        return
             
         
         
