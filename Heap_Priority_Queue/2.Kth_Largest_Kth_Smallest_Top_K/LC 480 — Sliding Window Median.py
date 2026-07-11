@@ -1,6 +1,6 @@
 from typing import List
 import heapq
-
+# two heap time
 class Solution:
     def medianSlidingWindow(self, nums: List[int], k: int) -> List[float]:
         
