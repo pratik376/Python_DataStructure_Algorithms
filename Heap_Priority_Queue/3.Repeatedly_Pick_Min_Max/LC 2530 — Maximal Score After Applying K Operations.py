@@ -13,7 +13,7 @@ class Solution:
 
         for _ in range(k):
 
-            element= -heapq.heappop(heapq)
+            element= -heapq.heappop(heap)
 
             score+= element
 
