@@ -12,7 +12,7 @@ class Solution:
 
             val, index = heapq.heappop(heap)
 
-            heapq.heappush(heap, (val * multiplier))
+            heapq.heappush(heap, (val * multiplier, index))
 
             nums[index]=val * multiplier
         return nums
