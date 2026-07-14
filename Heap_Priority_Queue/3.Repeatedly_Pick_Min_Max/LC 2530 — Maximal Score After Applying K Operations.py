@@ -17,7 +17,8 @@ class Solution:
 
             score+= element
 
-            heapq.heappush(heap, - (math.ceil(element/3)))
+            heapq.heappush(heap, - (math.ceil(element/3))) 
+            # heapq.heappush(heap, - ((elememt + 2)//3)) 
         
         return score
 
