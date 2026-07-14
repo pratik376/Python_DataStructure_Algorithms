@@ -1,5 +1,5 @@
 from typing import List
-
+import heapq
 
 class Solution:
     def rangeSum(self, nums: List[int], n: int, left: int, right: int) -> int:
@@ -11,7 +11,7 @@ class Solution:
 
             curr_sum=0
 
-            for j in range(n):
+            for j in range(i,n):
 
                 curr_sum = (curr_sum + nums[j]) % MOD
                 subarra_sum.append(curr_sum)
@@ -28,10 +28,19 @@ class Solution:
 
         MOD= 10 ** 9+ 7
         heap= [(n,i) for i,n in enumerate(nums)]
-
+        heapq.heapify(heap)
         res=0
         
 
+        for i in range(right):
+            num, index= heapq.heappop(heap)
+
+            if i >= left-1:
+                res= (res + num) % MOD
+            
+            if index + 1 < n:
+                next_pair= (nums+ nums[index+1], index+1)
+                heapq.heappush(heap,next_pair)
 
         return res
         
