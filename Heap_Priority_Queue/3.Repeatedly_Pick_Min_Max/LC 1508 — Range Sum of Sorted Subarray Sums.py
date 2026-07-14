@@ -27,7 +27,7 @@ class Solution:
     def rangeSum(self, nums: List[int], n: int, left: int, right: int) -> int:
 
         MOD= 10 ** 9+ 7
-        heap= [(n,i) for i,n in enumerate(nums)]
+        heap= [(num,i) for i,num in enumerate(nums)]
         heapq.heapify(heap)
         res=0
         
@@ -39,7 +39,7 @@ class Solution:
                 res= (res + num) % MOD
             
             if index + 1 < n:
-                next_pair= (nums+ nums[index+1], index+1)
+                next_pair= (num+ nums[index+1], index+1)
                 heapq.heappush(heap,next_pair)
 
         return res
