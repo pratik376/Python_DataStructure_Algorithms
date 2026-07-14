@@ -4,18 +4,22 @@ import heapq
 class Solution:
     def getFinalState(self, nums: List[int], k: int, multiplier: int) -> List[int]:
 
-        heapq.heapify(nums) # O(n)
+        heap = [(val,index) for index, val in enumerate(nums) ]
 
-        for _ in range(k):  # O(k)
+        heapq.heapify(heap)
 
-            element=heapq.heappop(nums) # log(n)
+        for _ in range(k):
 
-            heapq.heappush(nums, multiplier * element) # log(n)
-        
+            val, index = heapq.heappop(heap)
+
+            heapq.heappush(heap, (val * multiplier))
+
+            nums[index]=val * multiplier
         return nums
-    
-    # space complexity O(1)
-    # time complexity O(n + 2k log(n) ) ==> 0(n+ klongn)
 
+
+
+       
+    
 
         
