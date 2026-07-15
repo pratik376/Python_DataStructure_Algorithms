@@ -11,11 +11,15 @@ class Solution:
             if num % 2 == 0:
                 num= -num   
             else:
-                num *=2
+                num = - num *2
 
             heapq.heappush(max_heap,num)
 
         min_deviation= float('inf')
         min_val= - max(max_heap)
 
-        
+        while len(nums) == len(max_heap):
+
+            curr= - heapq.heappop(max_heap)
+            
+
