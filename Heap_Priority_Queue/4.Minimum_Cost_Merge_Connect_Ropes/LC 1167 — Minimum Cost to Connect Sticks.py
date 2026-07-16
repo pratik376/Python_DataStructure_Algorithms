@@ -15,5 +15,8 @@ class Solution:
             s3= s1+s2
 
             cost+=s3
-            
+
+            heapq.heappush(sticks,s3)
+        return cost
+
         
