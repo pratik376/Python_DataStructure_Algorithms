@@ -12,5 +12,17 @@ class Solution:
 
         heapq.heapify(arr)
 
-        while arr:
-            
+        while len(arr)>1:
+
+            n1= heapq.heappop(arr)
+            n2= heapq.heappop(arr)
+
+            num1 += (mul_factor *n1)
+            num2 +=(mul_factor *n2)
+
+            mul_factor *=10
+        n1= heapq.heappop(arr)
+        num1 += (mul_factor *n1)
+
+        return num1 + num2
+
