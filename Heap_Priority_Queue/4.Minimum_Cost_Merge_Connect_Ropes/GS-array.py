@@ -4,8 +4,13 @@ import heapq
 class Solution:
     def minSum(self, arr: List[int]) -> int:
         
-        cost=0
+        
+        num1=0
+        num2=0
+        mul_factor=1
+
 
         heapq.heapify(arr)
 
-        while 
+        while arr:
+            
