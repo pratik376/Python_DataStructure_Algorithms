@@ -28,7 +28,7 @@ class Solution:
                 heapq.heappush(max_heap, - curr//2)
             else:
                 break
-      fdgd  
+      fdg
         return min_deviation
 
 
