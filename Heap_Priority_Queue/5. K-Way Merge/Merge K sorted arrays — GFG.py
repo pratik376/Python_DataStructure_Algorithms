@@ -7,7 +7,9 @@ class Solution:
 
         for i in range(len(mat)):
 
-            heapq.heappush(heap, (mat[i][0],i,0))  # (element, array_index, position_of_element)
+            if mat[i]:
+
+                heapq.heappush(heap, (mat[i][0],i,0))  # (element, array_index, position_of_element)
 
         while heap:
 
