@@ -5,6 +5,7 @@ class Solution:
     def smallestRange(self, nums: List[List[int]]) -> List[int]:
         
         k= len(nums)
+        heap=[]
 
         left=right= nums[0][0]
 
@@ -14,4 +15,5 @@ class Solution:
 
             left= min(left, l[0])
             right= max(right, l[0])
-            
+
+
