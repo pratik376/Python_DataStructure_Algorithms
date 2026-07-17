@@ -25,7 +25,7 @@ class Solution:
                 head=curr
             
             if not prev:
-                curr=prev
+                prev=curr
             else:
                 prev.next = curr
                 prev=curr
