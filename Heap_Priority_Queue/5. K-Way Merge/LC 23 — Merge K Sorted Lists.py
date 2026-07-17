@@ -32,7 +32,7 @@ class Solution:
             
             if curr.next:
 
-                heapq.heappush(heap, (curr.next.val,curr.next, list_index, node_number +1))
+                heapq.heappush(heap, (curr.next.val,curr.next, list_index))
         
         return head
             
