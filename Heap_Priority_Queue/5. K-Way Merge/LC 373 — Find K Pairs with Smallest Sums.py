@@ -10,8 +10,7 @@ class Solution:
         answer=[]
 
         for i in range(min(len(nums1,nums2))):
-            heapq.heappush((nums1[i] + nums2[i], i,i))
-        
+            heapq.heappush((nums1[i] + nums2[i], i,i))    
 
         while k:
 
