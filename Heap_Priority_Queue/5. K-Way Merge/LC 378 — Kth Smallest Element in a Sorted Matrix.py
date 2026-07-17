@@ -18,7 +18,7 @@ class Solution:
             answer=value
 
             if index+1 < len(matrix[array_number]):
-                heapq.heappush(heap, (matrix[array_number][index+1], array_number,index))
+                heapq.heappush(heap, (matrix[array_number][index+1], array_number,index+1))
 
             k-=1
         
