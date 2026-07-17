@@ -15,11 +15,11 @@ class Solution:
 
         for i in range(len(lists)):
 
-            heapq.heappush(heap, (lists[i].val,lists[i],i,0))  # value ,node, list number, node_nuber
+            heapq.heappush(heap, (lists[i].val,lists[i],i))  # value ,node, list number
         
         while heap:
 
-            val, curr, list_index, node_number = heapq.heappop(heap)
+            val, curr, list_index = heapq.heappop(heap)
 
             if not head:
                 head=curr
