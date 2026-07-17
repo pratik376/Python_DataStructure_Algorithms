@@ -22,8 +22,6 @@ class Solution:
                 heapq.heappush(heap, (nums1[i]+ nums2[j+1], i, j+1))
             
             k-=1
-            
-
 
         return answer
 
