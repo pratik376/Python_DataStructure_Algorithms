@@ -24,7 +24,7 @@ class Solution:
         
         while heap:
 
-            val, curr, list_index = heapq.heappop(heap)
+            val, list_index, curr = heapq.heappop(heap)
 
             if not head:
                 head=curr
