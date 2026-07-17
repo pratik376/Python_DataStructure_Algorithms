@@ -11,7 +11,7 @@ class Solution:
 
             heapq.heappush(heap, (matrix[i][0], i, 0))  # value, array number, index
 
-        while len(matrix) - k > 0:
+        while  k > 0:
 
             value, array_number, index= heapq.heappop(heap)
 
