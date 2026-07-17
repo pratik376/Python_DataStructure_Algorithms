@@ -18,7 +18,8 @@ class Solution:
             if lists[i]:
 
                 # If two nodes have the same val, Python will compare the second item, which is a ListNode. ListNode objects are not naturally comparable, so this can raise an error.
-                heapq.heappush(heap, (lists[i].val,lists[i],i))  # value ,node, list number
+                # heapq.heappush(heap, (lists[i].val,lists[i],i))  # value ,node, list number
+                heapq.heappush(heap, (lists[i].val,i,lists[i])) 
                                                                  
         
         while heap:
@@ -36,7 +37,7 @@ class Solution:
             
             if curr.next:
 
-                heapq.heappush(heap, (curr.next.val,curr.next, list_index))
+                heapq.heappush(heap, (curr.next.val,list_index,curr.next))
         
         return head
             
