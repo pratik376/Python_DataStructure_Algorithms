@@ -15,7 +15,9 @@ class Solution:
 
         for i in range(len(lists)):
 
-            heapq.heappush(heap, (lists[i].val,lists[i],i))  # value ,node, list number
+            if lists[i]:
+
+                heapq.heappush(heap, (lists[i].val,lists[i],i))  # value ,node, list number
         
         while heap:
 
