@@ -24,6 +24,10 @@ class Solution:
                 heapq.heappush(heap, (nums1[i] + nums1[j+1], i,j+1))
             
             elif nums2[j] < nums1[i]  and i+ 1 < len(nums1):
-                heapq.heappush(heap, (nums1[i] + nums1[j+1], i+1,))
+                heapq.heappush(heap, (nums1[i] + nums1[j+1], i+1,j))
+            
+            k-=1
+        
+        return answer
 
 
