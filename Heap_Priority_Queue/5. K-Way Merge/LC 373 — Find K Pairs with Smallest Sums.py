@@ -16,7 +16,7 @@ class Solution:
 
             sum, i,j = heapq.heappop(heap)
 
-            answer.append([i,j])
+            answer.append([nums1[i],nums2[j]])
 
             if nums1[i] < nums2[j] and j + 1 < len(nums2):
 
