@@ -35,18 +35,19 @@ class Solution:
 
         def balance():
             nonlocal max_size, min_size
+            prune_min()
+            prune_max()
 
             if max_size > min_size + 1:
                 heapq.heappush(min_heap, -heapq.heappop(max_heap))
                 max_size -= 1
                 min_size += 1
-                prune_max()
-
+                
             elif min_size > max_size:
                 heapq.heappush(max_heap, -heapq.heappop(min_heap))
                 min_size -= 1
                 max_size += 1
-                prune_min()
+                
 
         for i in range(len(nums)):
 
