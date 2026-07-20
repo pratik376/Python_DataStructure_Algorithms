@@ -1,5 +1,5 @@
 from typing import List
-from collections import Counter
+from collections import Counter,deque
 import heapq
 
 class Solution:
@@ -7,5 +7,8 @@ class Solution:
 
         count= Counter(tasks)
         max_heap= [-val for val in count.values()]
+        heapq.heapify(max_heap)
+        q=deque()
+        time=0
         
         
