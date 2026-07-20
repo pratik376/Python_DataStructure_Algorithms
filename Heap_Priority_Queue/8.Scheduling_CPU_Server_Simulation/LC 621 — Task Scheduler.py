@@ -22,7 +22,7 @@ class Solution:
                     q.append([freq,time+n])
             
             if q and q[0][1]== time:
-                heapq.heappush(q.popleft()[0])
+                heapq.heappush(max_heap,q.popleft()[0])
         
         return time
         
