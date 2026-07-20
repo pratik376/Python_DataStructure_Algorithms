@@ -23,6 +23,5 @@ class Solution:
             
             if q and q[0][1]== time:
                 heapq.heappush(max_heap,q.popleft()[0])
-        
         return time
         
