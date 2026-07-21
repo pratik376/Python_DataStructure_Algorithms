@@ -1,8 +1,16 @@
+import heapq
+
 class SeatManager:
 
     def __init__(self, n: int):
-        
+         self.reserve=[]
 
+         for i in range(1,n):
+              self.reserve.append(i)
+        
+         heapq.heapify(self.reserve)
+        
+            
     def reserve(self) -> int:
         
 
