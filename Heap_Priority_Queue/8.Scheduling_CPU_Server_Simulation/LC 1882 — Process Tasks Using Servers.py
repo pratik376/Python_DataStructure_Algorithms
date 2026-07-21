@@ -11,11 +11,11 @@ class Solution:
         res= [0] * len(tasks)
 
         available= [(servers[i],i) for i in range(len(servers))]
-        available=heapq.heapify(available)
+        heapq.heapify(available)
         unavailable= []
         time=0
 
-        for i in range(len(servers)):
+        for i in range(len(tasks)):
             time= max(i,time)
 
             if not available:
