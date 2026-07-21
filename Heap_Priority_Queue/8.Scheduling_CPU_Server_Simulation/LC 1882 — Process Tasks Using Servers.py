@@ -26,7 +26,7 @@ class Solution:
                 heapq.heappush(available, (w,index))
             
             w, index = heapq.heappop(available)
-fds
+fd
             res[i]=index
 
             heapq.heappush(unavailable, (time+ tasks[i],w,index))
