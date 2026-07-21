@@ -15,5 +15,17 @@ class Solution:
 
         while min_heap or i < len(tasks):
 
-            while i < len(tasks) and time >=
+            while i < len(tasks) and time >=tasks[i][0]:
+                heapq.heappush(min_heap, [tasks[i][1], tasks[i][2]])
+                i+=1
+            
+            if not min_heap:
+                time= tasks[i][0]
+            else:
+
+                processTime, index= heapq.heappop(min_heap)
+                time+=processTime
+                res.append(index)
+        
+        return res
 
