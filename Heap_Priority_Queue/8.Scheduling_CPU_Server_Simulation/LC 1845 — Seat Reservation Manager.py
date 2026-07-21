@@ -8,7 +8,7 @@ class SeatManager:
          for i in range(1,n+1):
               self.reserve.append(i)
         
-         heapq.heapify(self.reserve)
+        #  heapq.heapify(self.reserve)
         
             
     def reserve(self) -> int:
