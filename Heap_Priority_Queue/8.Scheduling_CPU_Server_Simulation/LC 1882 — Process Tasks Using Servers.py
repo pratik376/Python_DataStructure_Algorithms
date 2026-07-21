@@ -18,6 +18,10 @@ class Solution:
         for i in range(len(tasks)):
             time= max(i,time)
 
+            while unavailable and time >= unavailable[0][0]:
+                timefree, w, index = heapq.heappop(unavailable)
+                heapq.heappush(available, (w,index))
+
             if not available:
                 time= unavailable[0][0]
             
