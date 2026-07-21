@@ -3,21 +3,21 @@ import heapq
 class SeatManager:
 
     def __init__(self, n: int):
-         self.reserve=[]
+         self.reserve_heap=[]
 
          for i in range(1,n+1):
-              self.reserve.append(i)
+              self.reserve_heap.append(i)
         
         #  heapq.heapify(self.reserve)
         
             
     def reserve(self) -> int:
          
-         return heapq.heappop(self.reserve)
+         return heapq.heappop(self.reserve_heap)
         
 
     def unreserve(self, seatNumber: int) -> None:
-         heapq.heappush(self.reserve,seatNumber)
+         heapq.heappush(self.reserve_heap,seatNumber)
         
 
 
