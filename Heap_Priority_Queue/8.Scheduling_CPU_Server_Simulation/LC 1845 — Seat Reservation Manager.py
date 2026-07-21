@@ -5,7 +5,7 @@ class SeatManager:
     def __init__(self, n: int):
          self.reserve=[]
 
-         for i in range(1,n):
+         for i in range(1,n+1):
               self.reserve.append(i)
         
          heapq.heapify(self.reserve)
