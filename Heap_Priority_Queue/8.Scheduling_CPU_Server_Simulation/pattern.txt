@@ -1,0 +1,1 @@
+when it is availabe or not availabe always use two heaps
