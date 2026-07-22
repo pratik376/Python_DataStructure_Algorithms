@@ -1,1 +1,17 @@
 when it is availabe or not availabe always use two heaps
+1. There is a resource that changes state
+
+Something can be:
+
+free
+busy
+
+Examples:
+
+servers
+chairs
+meeting rooms
+CPUs
+hotel rooms
+machines
+workers
