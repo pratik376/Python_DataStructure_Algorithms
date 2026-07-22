@@ -35,7 +35,8 @@ class Solution:
             numPass, start, end = t
 
             while minHeap and start >=minHeap[0][0]:
-                currPass-=heapq.heappop(minHeap)
+                end_time, passed = heapq.heappop(minHeap)
+                currPass-=passed
 
             currPass+= numPass
 
