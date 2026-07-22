@@ -4,12 +4,12 @@ import heapq
 class Solution:
     def smallestChair(self, times: List[List[int]], targetFriend: int) -> int:
 
-        for i in range(times):
+        for i in range(len(times)):
             times[i].append(i)
 
-        times.sort(lambda x : x[0])
+        times.sort(key=lambda x : x[0])
 
-        availbe_chair=[i for i in range(times)]
+        availbe_chair=[i for i in range(len(times))]
         busy_chair=[]
 
         for time in times:
