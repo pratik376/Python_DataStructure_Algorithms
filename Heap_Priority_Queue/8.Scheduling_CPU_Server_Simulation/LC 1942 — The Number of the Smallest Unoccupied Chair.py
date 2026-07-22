@@ -23,7 +23,7 @@ class Solution:
             chair_number= heapq.heappop(availbe_chair)
 
             if position==targetFriend:
-                return 
+                return chair_number
 
             heapq.heappush(busy_chair, (end, chair_number))
 
