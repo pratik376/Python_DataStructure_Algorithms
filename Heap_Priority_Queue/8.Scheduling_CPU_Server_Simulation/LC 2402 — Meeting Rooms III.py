@@ -21,12 +21,14 @@ class Solution:
             if not avalible_rooms:
                 freeTime, room_num, meeting_number =heapq.heappop(busy_rooms)
 
-
-
+                end_time= freeTime + (end_time-start_time)
+                heapq.heappush(busy_rooms, (end_time, room_num,meeting_number+1))
          
             room_num, meeting_number=heapq.heappop(avalible_rooms)
 
             heapq.heappush(busy_rooms, (end_time,room_num, meeting_number+1))
+
+        
         
                 
         
