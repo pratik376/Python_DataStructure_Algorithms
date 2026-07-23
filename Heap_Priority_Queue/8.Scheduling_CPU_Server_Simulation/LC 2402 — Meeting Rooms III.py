@@ -22,7 +22,7 @@ class Solution:
                 freeTime, room_num, meeting_number =heapq.heappop(busy_rooms)
 
                 end_time= freeTime + (end_time-start_time)
-                heapq.heappush(busy_rooms, (end_time, room_num,meeting_number+1))
+                heapq.heappush(busy_rooms, (end_time, room_num,meeting_number))
          
             room_num, meeting_number=heapq.heappop(avalible_rooms)
 
@@ -45,7 +45,16 @@ class Solution:
                 heapq.heappush(available_rooms,room_no)
 
             if not available_rooms:
-                 _, room_no= heapq.heappop(busy_rooms)
+                 end_time, room_no= heapq.heappop(busy_rooms)
+                 end_time = end_time + (end-start)
+                 heapq.heappush(available_rooms, end_time)
+
+            room_no= heapq.heappop(available_rooms)
+            heapq.heappush(busy_rooms,(end,room_no))
+            count[room_no]+=1
+
+        return count.index(max(count))
+
 
 
 
