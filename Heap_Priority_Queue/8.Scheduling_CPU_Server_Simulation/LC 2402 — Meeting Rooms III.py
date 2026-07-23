@@ -34,8 +34,23 @@ class Solution:
 
         available_rooms = [i for i in range(n)]
         busy_rooms=[] # (end_time, room_number)
+        count=[0] *n
+        meetings.sort()
 
-        
+        for start, end in meetings:
+
+            while busy_rooms and start >= busy_rooms[0][0]:
+                _, room_no= heapq.heappop(busy_rooms)
+
+                heapq.heappush(available_rooms,room_no)
+
+            if not available_rooms:
+                 _, room_no= heapq.heappop(busy_rooms)
+
+
+
+
+
 
 
 
