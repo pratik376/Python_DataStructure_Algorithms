@@ -15,7 +15,18 @@ class Solution:
                 continue
 
             bricks-=diff
-            heapq.heappush()
+            heapq.heappush(heap,-diff)
+
+            if bricks < 0:
+
+                if ladders==0:
+                    return i
+                else:
+                    ladders-=1
+                    bricks += -heapq.heappop(heap)
+
+        return len(heights)-1
+
 
 
 
