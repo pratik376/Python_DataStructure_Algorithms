@@ -8,5 +8,7 @@ class Solution:
         minCapital= [(c,p) for c, p in zip(capital,profits)]
         heapq.heapify(minCapital)
 
+        
+
 
         
