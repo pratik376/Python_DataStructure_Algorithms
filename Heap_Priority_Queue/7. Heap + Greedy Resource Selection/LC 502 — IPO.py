@@ -14,7 +14,8 @@ class Solution:
                 capita, profit =heapq.heappop(minCapital)
                 heapq.heappush(MaxProfit, - profits)
                 
-            
+            if not MaxProfit:
+                break
             
             w+= -heapq.heappop(MaxProfit)
 
