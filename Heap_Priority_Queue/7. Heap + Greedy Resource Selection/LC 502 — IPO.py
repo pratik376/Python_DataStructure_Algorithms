@@ -8,7 +8,19 @@ class Solution:
         minCapital= [(c,p) for c, p in zip(capital,profits)]
         heapq.heapify(minCapital)
 
-        
+        for i in range(k):
+
+            while minCapital and minCapital[0][0] <= w:
+                capita, profit =heapq.heappop(minCapital)
+                heapq.heappush(MaxProfit, - profits)
+                
+            
+            
+            w+= -heapq.heappop(MaxProfit)
+
+        return w
+            
+
 
 
         
