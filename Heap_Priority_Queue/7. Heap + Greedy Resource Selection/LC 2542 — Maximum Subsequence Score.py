@@ -14,4 +14,14 @@ class Solution:
 
             nums1+= n1
             heapq.heappush(minHeap,n1)
-            
+
+            if len(minHeap)> k:
+
+                n1Pop= heapq.heappop(minHeap)
+                n1Sum-=n1Pop
+
+            if len(minHeap) ==k:
+                res= max(res, n2 * n1Sum)
+
+        return res
+
