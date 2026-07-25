@@ -1,6 +1,8 @@
 from typing import List
 import heapq
 
+# always push opposite to what ever you have sorted
+
 class Solution:
     def scheduleCourse(self, courses: List[List[int]]) -> int:
 
