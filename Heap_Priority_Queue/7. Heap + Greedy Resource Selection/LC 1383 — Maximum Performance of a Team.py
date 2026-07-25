@@ -29,7 +29,6 @@ class Solution:
                     res,
                     emp_speed * ef
                 )
-
         return res
 
 
