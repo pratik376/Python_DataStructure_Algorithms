@@ -21,7 +21,7 @@ class Solution:
             heapq.heappush(min_heap,sp)
 
             if len(min_heap) > k:
-                sp=-heapq.heappop(min_heap)
+                sp=heapq.heappop(min_heap)
                 emp_speed-=sp
 
             
