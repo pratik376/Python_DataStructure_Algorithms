@@ -9,8 +9,7 @@ import heapq
 # "What value am I fixing by sorting?"
 
 # Then ask:
-
-"What remaining value do I need to optimize?"
+# "What remaining value do I need to optimize?"
 class Solution:
     def scheduleCourse(self, courses: List[List[int]]) -> int:
 
