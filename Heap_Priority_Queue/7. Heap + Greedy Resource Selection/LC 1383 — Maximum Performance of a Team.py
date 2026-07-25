@@ -29,7 +29,7 @@ class Solution:
                     res,
                     emp_speed * ef
                 )
-        return res
+        return res % (10 ** 9 + 7)
 
 
         
