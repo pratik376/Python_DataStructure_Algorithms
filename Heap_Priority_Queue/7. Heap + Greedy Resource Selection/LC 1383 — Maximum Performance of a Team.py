@@ -24,9 +24,8 @@ class Solution:
                 sp=-heapq.heappop(max_heap)
                 emp_speed-=sp
 
-            if len(max_heap) == k:
-
-                res= max(
+            
+            res= max(
                     res,
                     emp_speed * ef
                 )
