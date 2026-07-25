@@ -16,5 +16,11 @@ class Solution:
 
             heapq.heappush(maxHeap, -duration)
 
-            
+            if totalDays > lastDay:
+                maxday= -heapq.heappop(maxHeap)
+                totalDays-=maxday
+
+        return len(maxHeap)
+
+
         
