@@ -6,9 +6,9 @@ class Solution:
 
         pairs= [(sp,ef) for sp, ef in zip(speed,efficiency)]
 
-        pairs.sort(reverse=True)
+        pairs.sort(key= lambda i : i[1] ,reverse=True)
 
-        max_heap= []
+        min_heap= []
 
         res=0
 
@@ -18,10 +18,10 @@ class Solution:
 
             emp_speed += sp
 
-            heapq.heappush(max_heap,-sp)
+            heapq.heappush(min_heap,sp)
 
-            if len(max_heap) > k:
-                sp=-heapq.heappop(max_heap)
+            if len(min_heap) > k:
+                sp=-heapq.heappop(min_heap)
                 emp_speed-=sp
 
             
