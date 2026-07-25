@@ -2,7 +2,15 @@ from typing import List
 import heapq
 
 # always push opposite to what ever you have sorted
+# A better rule to remember
 
+# When you see a greedy + heap problem, ask yourself:
+
+# "What value am I fixing by sorting?"
+
+# Then ask:
+
+"What remaining value do I need to optimize?"
 class Solution:
     def scheduleCourse(self, courses: List[List[int]]) -> int:
 
