@@ -6,7 +6,7 @@ class Solution:
 
         pairs= [(sp,ef) for sp, ef in zip(speed,efficiency)]
 
-        pairs.sort()
+        pairs.sort(reverse=True)
 
         max_heap= []
 
@@ -30,6 +30,8 @@ class Solution:
                     res,
                     emp_speed * ef
                 )
+
+        return res
 
 
         
