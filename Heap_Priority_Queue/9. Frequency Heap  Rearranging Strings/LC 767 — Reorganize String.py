@@ -24,8 +24,6 @@ class Solution:
             if prev_char !='' and prev_freq:
                 heapq.heappush(Maxheap,(prev_freq,prev_char))
 
-
-
             prev_char=char
             prev_freq=value
 
