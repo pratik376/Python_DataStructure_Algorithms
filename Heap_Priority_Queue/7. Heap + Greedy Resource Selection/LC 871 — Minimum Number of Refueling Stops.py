@@ -15,7 +15,6 @@ class Solution:
 
            fuel-= (position-prev)
            
-
            while heap and fuel <0:
                fuel += - heapq.heappop(heap)
                stops+=1
