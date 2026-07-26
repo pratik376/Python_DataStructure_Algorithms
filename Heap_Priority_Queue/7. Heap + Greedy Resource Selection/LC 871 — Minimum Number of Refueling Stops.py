@@ -3,25 +3,31 @@ from typing import List
 class Solution:
     def minRefuelStops(self, target: int, startFuel: int, stations: List[List[int]]) -> int:
 
-        Maxheap=[]
+       stations.append([target,0])
 
-        stations.sort() 
-
-        current_mile=0
-
-        for position, fuel in stations:
-
-            startFuel-=position
-            startFuel += fuel
-            current_mile+= position
-            heapq.heappush(heap,fuel)
-            
+       heap=[]
+       stops=0
+       fuel=startFuel
+       prev=0
 
 
-            if current_mile >= target:
-                return len(heap)
+       for position, station_fuel in stations:
 
-            if current_mile <
+           fuel-= (position-prev)
+           heapq.heappush(heap, - station_fuel)
+
+           while heap and fuel <0:
+               fuel += - heapq.heappop(heap)
+               stops+=1
+
+           if fuel < 0:
+               return -1
+           prev=position
+
+       return stops
+           
+           
+           
 
 
         
