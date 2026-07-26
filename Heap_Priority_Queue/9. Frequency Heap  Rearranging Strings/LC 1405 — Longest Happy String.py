@@ -12,9 +12,6 @@ class Solution:
 
             if count:
                 heapq.heappush(Maxheap,(count,char))
-
-        heapq.heapify(Maxheap)
-
         res=[]
    
 
@@ -35,7 +32,7 @@ class Solution:
                 freq2-=1
 
                 if freq2 >0:
-                    heapq.heappush(Maxheap,(freq2,char2))
+                    heapq.heappush(Maxheap,(-freq2,char2))
 
                 heapq.heappush(Maxheap,(-freq,char))
 
@@ -44,7 +41,7 @@ class Solution:
                 freq-=1
 
                 if freq:
-                    heapq.heappush(Maxheap,(freq,char))
+                    heapq.heappush(Maxheap,(-freq,char))
     
         return ''.join(res)
 
