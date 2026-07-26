@@ -32,6 +32,8 @@ class Solution:
 
             prev_char=char
             prev_freq=value
+
+        return ''.join(res)
         
 
 
