@@ -17,8 +17,6 @@ class Solution:
 
         while Maxheap:
 
- 
-
             value, char =heapq.heappop(Maxheap)
 
             if prev_char !='' and prev_freq:
@@ -33,7 +31,7 @@ class Solution:
             prev_char=char
             prev_freq=value
 
-        return ''.join(res)
+        return " ".join(res)
         
 
 
