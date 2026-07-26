@@ -20,12 +20,11 @@ class Solution:
             freq, char =heapq.heappop(Maxheap)
 
             if freq >= 2:
-
                 freq-=2
                 res += char *2
-            elif freq:
+            elif freq>0:
                 freq-=1
-                res+= freq
+                res+= char
 
             if prev_char !='' and prev_freq:
 
