@@ -22,14 +22,14 @@ class Solution:
             if prev_char !='' and prev_freq:
                 heapq.heappush(Maxheap,(prev_freq,prev_char))
 
-            if prev_char==char:
-                return ''
-
             res.append(char)
             value+=1
 
             prev_char=char
             prev_freq=value
+
+        if prev_freq:
+            return " "
 
         return " ".join(res)
         
