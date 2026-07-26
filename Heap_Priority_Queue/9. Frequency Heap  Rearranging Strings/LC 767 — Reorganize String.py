@@ -29,9 +29,9 @@ class Solution:
             prev_freq=value
 
         if prev_freq:
-            return " "
+            return ""
 
-        return " ".join(res)
+        return "".join(res)
         
 
 
