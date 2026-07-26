@@ -18,12 +18,13 @@ class Solution:
         while Maxheap:
 
             value, char =heapq.heappop(Maxheap)
+            res.append(char)
+            value+=1
 
             if prev_char !='' and prev_freq:
                 heapq.heappush(Maxheap,(prev_freq,prev_char))
 
-            res.append(char)
-            value+=1
+
 
             prev_char=char
             prev_freq=value
