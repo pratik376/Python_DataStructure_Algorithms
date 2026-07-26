@@ -31,7 +31,7 @@ class Solution:
                 freq2, char2= heapq.heappop(Maxheap)
                 freq2=-freq2
 
-                res.append(freq2)
+                res.append(char2)
                 freq2-=1
 
                 if freq2 >0:
