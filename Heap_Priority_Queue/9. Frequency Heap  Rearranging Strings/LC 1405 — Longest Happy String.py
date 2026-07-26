@@ -11,9 +11,8 @@ class Solution:
 
         heapq.heapify(Maxheap)
 
-        res=''
-        prev_char=''
-        prev_freq=0
+        res=[]
+   
 
         while Maxheap:
 
