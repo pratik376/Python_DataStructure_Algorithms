@@ -14,7 +14,7 @@ class Solution:
        for position, station_fuel in stations:
 
            fuel-= (position-prev)
-           heapq.heappush(heap, - station_fuel)
+           
 
            while heap and fuel <0:
                fuel += - heapq.heappop(heap)
@@ -22,6 +22,7 @@ class Solution:
 
            if fuel < 0:
                return -1
+           heapq.heappush(heap, - station_fuel)
            prev=position
 
        return stops
