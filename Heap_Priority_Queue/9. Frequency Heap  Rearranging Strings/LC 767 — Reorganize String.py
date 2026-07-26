@@ -21,7 +21,7 @@ class Solution:
 
             value, char =heapq.heappop(Maxheap)
 
-            if prev_char is not '' and prev_freq:
+            if prev_char !='' and prev_freq:
                 heapq.heappush(Maxheap,(prev_freq,prev_char))
 
             if prev_char==char:
