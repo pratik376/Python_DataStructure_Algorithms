@@ -19,19 +19,9 @@ class Solution:
             freq, char =heapq.heappop(Maxheap)
             freq= -freq
 
-            if freq >= 2:
-                freq-=2
-                res += char *2
-            elif freq>0:
-                freq-=1
-                res+= char
+            
 
-            if prev_char !='' and prev_freq:
-
-                heapq.heappush(Maxheap,(-prev_freq, prev_char))
-
-            prev_char=char
-            prev_freq=freq
+     
 
         return res
 
