@@ -17,7 +17,8 @@ class Solution:
 
         while Maxheap:
 
-            -freq, char =heapq.heappop(Maxheap)
+            freq, char =heapq.heappop(Maxheap)
+            freq= -freq
 
             if freq >= 2:
                 freq-=2
