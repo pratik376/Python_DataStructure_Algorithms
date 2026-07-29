@@ -53,3 +53,29 @@ class Solution:
 
         return rooms
 
+
+         
+class Solution:
+    def minMeetingRooms(self, intervals: List[List[int]]) -> int:
+
+        if not intervals:
+            return 0
+
+        intervals.sort()
+        end_heap=[]
+        rooms=0
+
+        for star, end in intervals:
+
+            while end_heap and end_heap[0] <=star:
+                heapq.heappop(end_heap)
+
+
+            if end_heap:
+                rooms+=1
+
+            heapq.heappush(end_heap, end) 
+
+        return rooms
+
+
