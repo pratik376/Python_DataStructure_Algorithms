@@ -17,7 +17,7 @@ class Solution:
 
         for time,idx in sorted_people:
 
-            while i < len(flowers) and time <=flowers[i][0]:
+            while i < len(flowers) and flowers[i][0]<= time:
 
                 heapq.heappush(ending_time_heap, flowers[i][1])
                 i+=1
