@@ -9,7 +9,7 @@ class Solution:
         sorted_query = [(val,index) for index, val in enumerate(queries)]
 
         sorted_query.sort()
-        min_heap=[] # (end_time, size_interval)
+        min_heap=[] # (length, end)
 
         answer= [-1] * len(queries)
         i=0
