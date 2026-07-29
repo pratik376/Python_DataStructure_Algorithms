@@ -18,12 +18,11 @@ class Solution:
         for val, index in sorted_query:
 
             while i < len(intervals) and intervals[i][0]<=val:
-                heapq.heappush(min_heap, (intervals[i][1],intervals[i][1] - intervals[i][0] +1 ))
+                heapq.heappush(min_heap, (intervals[i][1] - intervals[i][0] +1 ,intervals[i][1]))
                 i+=1
 
             while min_heap and min_heap[0][0] < val:
                 heapq.heappop(min_heap)
-
 
             if min_heap:
                 answer[index]= min_heap[0][1]
