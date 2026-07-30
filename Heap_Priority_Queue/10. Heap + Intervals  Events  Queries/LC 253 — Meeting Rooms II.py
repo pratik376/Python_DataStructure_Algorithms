@@ -49,7 +49,7 @@ class Solution:
 
             heapq.heappush(end_heap, end)
 
-            rooms= max(rooms, len(end_heap))
+            room= max(rooms, len(end_heap))
 
         return rooms
 
