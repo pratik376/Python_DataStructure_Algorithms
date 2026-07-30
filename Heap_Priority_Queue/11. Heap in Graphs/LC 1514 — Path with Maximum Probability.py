@@ -22,6 +22,19 @@ class Solution:
 
             
 
+            if node in visited:
+                continue
+
+            visited.add(node)
+
+            for prob2, node2 in edges[node]:
+
+                if not node2 in visited:
+
+                    heapq.heappush(maxHeap,(prob*prob2,node2)) 
+
+
+
 
 
         
