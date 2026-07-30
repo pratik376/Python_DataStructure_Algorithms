@@ -20,7 +20,8 @@ class Solution:
         while maxHeap:
             prob, node= heapq.heappop(maxHeap)
 
-            
+            if node==end_node:
+                return prob
 
             if node in visited:
                 continue
