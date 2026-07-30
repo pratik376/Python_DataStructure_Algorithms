@@ -32,7 +32,7 @@ class Solution:
 
                 if not node2 in visited:
 
-                    heapq.heappush(maxHeap,(prob*(-prob2),node2)) 
+                    heapq.heappush(maxHeap,(-(prob*prob2),node2)) 
 
 
 
