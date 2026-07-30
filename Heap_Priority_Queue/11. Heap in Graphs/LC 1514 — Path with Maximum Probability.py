@@ -11,14 +11,14 @@ class Solution:
         for (u,v), p in zip(edges,succProb):
             graph[u].append((p,v))
             graph[v].append((p,u))
-            
-    
+              
         visited= set()
         maxHeap= [(-1, start_node)] # (prob, node)
 
 
         while maxHeap:
             prob, node= heapq.heappop(maxHeap)
+            prob=-prob
 
             if node==end_node:
                 return prob
@@ -32,7 +32,7 @@ class Solution:
 
                 if not node2 in visited:
 
-                    heapq.heappush(maxHeap,(prob*prob2,node2)) 
+                    heapq.heappush(maxHeap,(prob*(-prob2),node2)) 
 
 
 
