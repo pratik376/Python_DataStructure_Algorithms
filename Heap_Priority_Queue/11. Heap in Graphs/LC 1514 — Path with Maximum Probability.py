@@ -28,10 +28,9 @@ class Solution:
 
             visited.add(node)
 
-            for prob2, node2 in edges[node]:
+            for prob2, node2 in graph[node]:
 
                 if not node2 in visited:
-
                     heapq.heappush(maxHeap,(-(prob*prob2),node2)) 
 
 
