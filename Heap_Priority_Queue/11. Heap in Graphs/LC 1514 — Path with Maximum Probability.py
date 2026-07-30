@@ -6,15 +6,15 @@ from collections import defaultdict
 class Solution:
     def maxProbability(self, n: int, edges: List[List[int]], succProb: List[float], start_node: int, end_node: int) -> float:
 
-        edges=defaultdict(list)  # (prob, node)
-        i=0
+        graph=defaultdict(list)  # (prob, node)
 
-        for start, des in edges:
-            edges[start].append((succProb[i],des))
-            i+=1
-
+        for (u,v), p in zip(edges,succProb):
+            graph[u].append((p,v))
+            graph[v].append((p,u))
+            
+    
         visited= set()
-        maxHeap= [(1, start_node)] # (prob, node)
+        maxHeap= [(-1, start_node)] # (prob, node)
 
 
         while maxHeap:
