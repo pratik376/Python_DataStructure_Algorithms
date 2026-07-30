@@ -33,6 +33,8 @@ class Solution:
                 if not node2 in visited:
                     heapq.heappush(maxHeap,(-(prob*prob2),node2)) 
 
+        return 0.0
+
 
 
 
