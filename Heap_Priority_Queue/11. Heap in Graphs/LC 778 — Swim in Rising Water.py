@@ -6,7 +6,7 @@ from collections import defaultdict
 class Solution:
     def swimInWater(self, grid: List[List[int]]) -> int:
 
-        ROWS,Columns= len(grid[0]), len(grid[1])
+        ROWS,Columns= len(grid), len(grid[0])
 
         visited= set()
 
