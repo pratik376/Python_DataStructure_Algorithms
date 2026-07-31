@@ -25,8 +25,12 @@ class Solution:
             if r== ROWS-1 and c== Columns-1:
                 return curr_val
 
-            for dr,dc in directions:
+            for dr,dc in grid:
                 newR,newC= r+ dr , c+dc
             
                 if newR < 0 or newC < 0 or newR==ROWS or newC==Columns or (newR,newC) in visited:
                     continue 
+
+                new_diff= max(curr_val, grid[newR][newC])
+
+                heapq.heappush(minHeap, (new_diff, newR,newC))
