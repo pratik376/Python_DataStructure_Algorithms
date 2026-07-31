@@ -32,7 +32,7 @@ class Solution:
                 if newR < 0 or newC < 0 or newR==ROWS or newC==COLUMS or (newR,newC) in visited:
                     continue 
 
-                newDiff= min(diff, [newR][newC])
+                newDiff= min(diff, heights[newR][newC])
                 heapq.heappush(maxHeap, [-newDiff, newR,newC])
 
 
