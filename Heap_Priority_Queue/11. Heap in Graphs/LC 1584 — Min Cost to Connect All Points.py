@@ -1,7 +1,6 @@
 import heapq
 from typing import List
 
-
 def minCostConnectPoints(self, points: List[List[int]]) -> int:
     N = len(points)
 
