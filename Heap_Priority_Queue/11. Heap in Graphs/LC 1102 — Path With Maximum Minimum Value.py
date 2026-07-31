@@ -7,7 +7,7 @@ class Solution:
 
         ROWS, COLUMS= len(heights), len(heights[0])
 
-        maxHeap = [[-heights[0][0],0,0]] # (diff, r,c)
+        maxHeap = [[-heights[0][0],0,0]] # (minimum, r,c)
         visited= set()
         
         directions= [[0,1], [0,-1], [1,0],[-1,0]]
