@@ -28,5 +28,5 @@ class Solution:
             for dr,dc in directions:
                 newR,newC= r+ dr , c+dc
             
-                if newR < 0 or newC < 0 or newR==ROWS or newC==COLUMS or (newR,newC) in visited:
+                if newR < 0 or newC < 0 or newR==ROWS or newC==Columns or (newR,newC) in visited:
                     continue 
