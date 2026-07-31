@@ -1,1 +1,3 @@
 if direct only instert one pair is unidirected insert both part
+
+if overall answer requires minimum use minimum heap else maxheap and during process what we caclulate calculate that
