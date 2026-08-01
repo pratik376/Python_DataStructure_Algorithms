@@ -14,4 +14,13 @@ class Solution:
 
             if num < 0:
                 heapq.heappush(min_heap,num)
+
+            while min_heap and prefix <0:
+
+                worst= heapq.heappop(min_heap)
+                prefix -= worst
+                moves+=1
+
+        return moves
+
             
