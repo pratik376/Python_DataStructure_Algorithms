@@ -40,7 +40,7 @@ class Twitter:
                 )
 
         return res
-# jkj
+# jk
     def follow(self, followerId: int, followeeId: int) -> None:
         self.followMap[followerId].add(followeeId)
 
