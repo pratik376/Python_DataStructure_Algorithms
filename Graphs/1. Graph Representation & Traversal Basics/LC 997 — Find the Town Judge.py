@@ -6,7 +6,7 @@ class Solution:
     def findJudge(self, n: int, trust: List[List[int]]) -> int:
 
         inDegreeCount=defaultdict(int)
-        outDegreeCounta=defaultdict(int)
+        outDegreeCount=defaultdict(int)
 
         judge=0
         
@@ -14,16 +14,10 @@ class Solution:
 
         for personA, personB in trust:
 
-            if personA not in visited:
-                visited.add(personA)
+            inDegreeCount[personB]+=1
+            outDegreeCount[personA]+=1
+        
 
-                edgecount[personB]+=1
-
-
-        for key in edgecount.keys():
-
-            if edgecount[key] == n-1:
-                judge= key
 
         return judge if judge else -1
         
