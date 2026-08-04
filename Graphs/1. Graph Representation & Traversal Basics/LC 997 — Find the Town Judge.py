@@ -6,10 +6,13 @@ class Solution:
 
         juge= 0 
         count=0
+        visited= set()
 
         for personA, personB in trust:
-            count+=1
 
+           if [personA,personB] not in visited:
+            count+=1
+            visited.add([personA,personB])
 
             if juge ==0:
                 juge= personB
