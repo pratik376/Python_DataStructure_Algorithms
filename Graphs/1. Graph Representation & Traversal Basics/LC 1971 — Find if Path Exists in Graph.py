@@ -5,14 +5,38 @@ from collections import defaultdict
 class Solution:
     def validPath(self, n: int, edges: List[List[int]], source: int, destination: int) -> bool:
 
-        edges= defaultdict(set)
+        graph= defaultdict(list)
+        seen=set()
 
-        for a,b in edges:
+        stack=[source]
+        seen.add(source)
 
-            edges[a].append(b)
-            edges[b].append(a)
+        for u,v in edges:
+            graph[u].append(v)
+            graph[v].append(u)
 
-        while True:
+
+        while stack:
+
+            element= stack.pop()
+
+            if element== destination:
+                return True
+
+            for vertes in graph[element]:
+
+                if not vertes in seen:
+                    seen.add(vertes)
+                    stack.push(vertes)
+
+        return False
+
+        
+
+
+
+
+
 
 
 
