@@ -14,6 +14,17 @@ class Solution:
             outGoingEdge[a]+=1
             inComingEdge[b]+=1
 
+        for i in range(n):
+
+            if inComingEdge[i]==0:
+                count+=1
+                vertex=i
+
+            if count>2:
+                return -1
+
+        return vertex
+
         
 
     
