@@ -18,7 +18,7 @@ class Solution:
                 count+=1
                 vertex=i
 
-            if count>2:
+            if count>1:
                 return -1
 
         return vertex
