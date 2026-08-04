@@ -27,7 +27,7 @@ class Solution:
 
                 if not vertes in seen:
                     seen.add(vertes)
-                    stack.push(vertes)
+                    stack.append(vertes)
 
         return False
 
