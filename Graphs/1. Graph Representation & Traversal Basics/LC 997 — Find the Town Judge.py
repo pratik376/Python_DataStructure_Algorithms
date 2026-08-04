@@ -9,7 +9,7 @@ class Solution:
         for personA, personB in trust:
 
             if juge ==0:
-                personB= juge
+                juge= personB
 
             elif (juge != personB):
                 return -1
