@@ -5,14 +5,20 @@ class Solution:
     def findJudge(self, n: int, trust: List[List[int]]) -> int:
 
         juge= 0 
+        count=0
 
         for personA, personB in trust:
+            count+=1
+
 
             if juge ==0:
                 juge= personB
 
             elif (juge != personB):
                 return -1
+
+        if count < n-1:
+            return -1
 
         return juge
 
