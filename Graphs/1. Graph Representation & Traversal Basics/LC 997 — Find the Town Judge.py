@@ -5,10 +5,11 @@ from collections import defaultdict
 class Solution:
     def findJudge(self, n: int, trust: List[List[int]]) -> int:
 
-        edgecount=defaultdict(int)
+        inDegreeCount=defaultdict(int)
+        outDegreeCounta=defaultdict(int)
 
         judge=0
-        visited= set()
+        
 
 
         for personA, personB in trust:
