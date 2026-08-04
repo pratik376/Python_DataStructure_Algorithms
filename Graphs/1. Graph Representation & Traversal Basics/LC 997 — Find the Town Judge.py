@@ -14,6 +14,9 @@ class Solution:
             count+=1
             visited.add([personA,personB])
 
+           else:
+            continue
+
             if juge ==0:
                 juge= personB
 
