@@ -6,7 +6,7 @@ class Solution:
         inComingEdge= defaultdict(int)
       
         count=0
-        vertex=0
+        vertex=-1
         
         for a, b in edges:
       
