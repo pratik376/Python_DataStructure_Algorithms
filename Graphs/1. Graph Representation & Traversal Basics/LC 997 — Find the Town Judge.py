@@ -1,30 +1,40 @@
 from typing import List
+from collections import defaultdict
 
 
 class Solution:
     def findJudge(self, n: int, trust: List[List[int]]) -> int:
 
-        juge= 0 
-        count=0
+        edgecount=defaultdict(int)
+
+        judge=0
         visited= set()
+
 
         for personA, personB in trust:
 
-           if [personA,personB] not in visited:
-            count+=1
-            visited.add([personA,personB])
+            if personA not in visited:
+                visited.add(personA)
 
-           else:
-            continue
+                edgecount[personB]+=1
 
-            if juge ==0:
-                juge= personB
 
-            elif (juge != personB):
-                return -1
+        for key in edgecount.keys():
 
-        if count < n-1:
-            return -1
+            if edgecount[key] == n-1:
+                judge= key
 
-        return juge
+        return judge if judge else -1
+        
+
+
+            
+
+        
+
+
+
+
+
+        
 
