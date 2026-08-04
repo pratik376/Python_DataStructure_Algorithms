@@ -1,6 +1,7 @@
 from typing import List
 from collections import defaultdict
 
+# time and space complexity it  O(V+E) and O(v) 
 
 class Solution:
     def findJudge(self, n: int, trust: List[List[int]]) -> int:
@@ -9,8 +10,6 @@ class Solution:
         outDegreeCount=defaultdict(int)
 
         judge=0
-        
-
 
         for personA, personB in trust:
 
