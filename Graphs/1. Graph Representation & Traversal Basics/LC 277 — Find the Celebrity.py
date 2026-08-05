@@ -46,6 +46,13 @@ class Solution:
             if knows(candidate, i):
                 candidate = i
 
+                # or i can also write this
+            
+            # if not knows(i, candidate):
+            #     candidate= i
+
+
+
         if self.is_celeb(candidate,n):
             return candidate
         else:
