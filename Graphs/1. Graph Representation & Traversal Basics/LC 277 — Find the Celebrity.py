@@ -40,7 +40,7 @@ class Solution:
     def findCelebrity(self, n: int) -> int:
 
         candidate=0
-#dfdfgdfgdfgdfgfdfgd
+#dfdfgdfgdfgdfgfdf
         for i in range(1,n):
 
             if knows(candidate, i):
