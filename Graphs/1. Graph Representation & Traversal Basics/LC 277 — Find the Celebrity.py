@@ -36,7 +36,6 @@ class Solution:
 
         return -1
 
-
 class Solution:
     def findCelebrity(self, n: int) -> int:
 
@@ -47,7 +46,10 @@ class Solution:
             if knows(i, candidate):
                 candidate = candidate
 
-
+        if self.is_celeb(candidate,n):
+            return candidate
+        else:
+            return -1
 
     def is_celeb(self, candidate, n):
 
