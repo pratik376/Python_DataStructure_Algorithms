@@ -55,12 +55,9 @@ class Solution:
 
             if i==candidate:
                 continue
-
             else:
-
                 if not knows(i,candidate) or knows(candidate,i):
                     return False
-
         return True
 
 
