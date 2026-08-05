@@ -18,7 +18,7 @@ class Solution:
 
                     if ordrInd[w2[j]] < ordrInd[w1[j]]:
                         return False
-
+                    break
         return True
 
 
