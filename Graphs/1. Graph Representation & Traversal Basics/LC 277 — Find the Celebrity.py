@@ -43,8 +43,8 @@ class Solution:
 
         for i in range(1,n):
 
-            if knows(i, candidate):
-                candidate = candidate
+            if knows(candidate, i):
+                candidate = i
 
         if self.is_celeb(candidate,n):
             return candidate
