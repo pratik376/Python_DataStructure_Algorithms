@@ -36,7 +36,7 @@ class Solution:
 
         for i in range(len(bombs)):
 
-            res= max(res, dfs(i,set()))
+            res= max(res, dfs(i,set())) # ( O V*(V+E))
 
 
         
