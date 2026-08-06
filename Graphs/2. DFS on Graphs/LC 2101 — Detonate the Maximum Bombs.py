@@ -22,6 +22,9 @@ class Solution:
                 if d<=r2:
                     adjList[j].append(i)
 
+        res=0
+        
+
         
 
 
