@@ -5,6 +5,26 @@ class Solution:
 
         myDict= defaultdict(list)
 
-        
+        for perent, child in zip(ppid,pid):
+
+            myDict[perent].append(child)
+
+        stack=[kill]
+        visited= {kill}
+
+
+        while stack:
+            process= stack.pop()
+
+
+            for child in myDict[process]:
+
+                if not child in visited:
+                    visited.add(child)
+                    stack.append(child)
+
+        return list(visited)
+
+
 
         
