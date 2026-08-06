@@ -12,6 +12,27 @@ class Solution:
         if not node:
             return Node
 
+        oldToNew={}
+        oldToNew[node]=Node(node.val)
+       
+
+        stack=[node]
+
+        while stack:
+
+            curr = stack.pop()
+
+            for nei in curr.neighbors:
+
+                if nei not in oldToNew:
+                    oldToNew[nei]=Node(nei.val)
+                    stack.append(nei)
+
+                oldToNew[curr].neighbors.append(oldToNew[nei])
+            
+
+
+
 
 
 
