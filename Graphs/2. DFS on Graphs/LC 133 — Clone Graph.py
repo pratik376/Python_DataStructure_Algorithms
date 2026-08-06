@@ -29,6 +29,8 @@ class Solution:
                     stack.append(nei)
 
                 oldToNew[curr].neighbors.append(oldToNew[nei])
+
+        return oldToNew[node]
             
 
 
