@@ -9,7 +9,7 @@ class Solution:
 
 
         for i in range(len(bombs)):
-            for j in range(i+1 , range(bombs)):
+            for j in range(i+1 , len(bombs)):
 
                 x1,y1,r1= bombs[i]
                 x2,y2,r2= bombs[j]
