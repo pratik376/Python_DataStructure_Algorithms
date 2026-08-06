@@ -10,7 +10,7 @@ class Solution:
     def cloneGraph(self, node: Optional['Node']) -> Optional['Node']:
 
         if not node:
-            return Node
+            return None
 
         oldToNew={}
         oldToNew[node]=Node(node.val)
