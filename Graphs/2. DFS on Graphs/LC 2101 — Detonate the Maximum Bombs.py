@@ -23,7 +23,21 @@ class Solution:
                     adjList[j].append(i)
 
         res=0
-        
+
+        def dfs(i, visit):
+
+            if i in visit:
+                return 0
+            visit.add(i)
+            for child in adjList[i]:
+                dfs(child,visit)
+
+            return len(visit)
+
+        for i in range(len(bombs)):
+
+            res= max(res, dfs(i,set()))
+
 
         
 
