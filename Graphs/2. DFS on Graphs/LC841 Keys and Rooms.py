@@ -4,7 +4,7 @@ from typing import List
 class Solution:
     def canVisitAllRooms(self, rooms: List[List[int]]) -> bool:
 
-        dict= {index:val for index, val in enumerate(rooms)}
+        Mydict= {index:val for index, val in enumerate(rooms)}
 
         stack=[0]
         seen=set()
@@ -15,6 +15,17 @@ class Solution:
 
 
             room= stack.pop()
+
+            for nei in Mydict[room]:
+
+                if nei not in seen:
+                    seen.add(nei)
+                    stack.append(nei)
+
+        if len(seen)==len(rooms):
+            return True
+        else:
+            return False
 
 
 
