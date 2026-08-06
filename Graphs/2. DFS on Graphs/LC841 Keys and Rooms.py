@@ -24,6 +24,23 @@ class Solution:
 
         return len(rooms)==len(seen)
 
+    def canVisitAllRooms(self, rooms: List[List[int]]) -> bool:
+
+
+        stack=[0]
+        seen={0} # this is a set not dict
+
+
+        while stack:
+            room= stack.pop()
+
+            for nei in rooms[room]:
+
+                if nei not in seen:
+                    seen.add(nei)
+                    stack.append(nei)
+
+        return len(rooms)==len(seen)
 
 
         
