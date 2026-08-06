@@ -33,7 +33,10 @@ class Solution:
         return oldToNew[node]
             
 
+class Solution:
+    def cloneGraph(self, node: Optional['Node']) -> Optional['Node']:
 
+      
 
 
 
