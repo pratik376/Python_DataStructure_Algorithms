@@ -10,6 +10,9 @@ class Solution:
 
 
         stack=[node]
+        head= Node(node.val)
+        stack2=[head]
+
 
 
         seen=set()
@@ -18,10 +21,14 @@ class Solution:
         while stack:
 
             node=stack.pop()
+            clone=stack2.pop()
 
             for neighbour in node.neighbors:
 
                 if not neighbour in seen:
+                    clone_neigh=Node(neighbour.val)
+                    clone.neighbors.append(clone_neigh)
+                    stack2.append(clone_neigh)
                     seen.add(neighbour)
                     stack.append(neighbour)
 
