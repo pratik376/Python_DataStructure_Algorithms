@@ -22,11 +22,7 @@ class Solution:
                     seen.add(nei)
                     stack.append(nei)
 
-        if len(seen)==len(rooms):
-            return True
-        else:
-            return False
-
+        return len(rooms)==len(seen)
 
 
 
