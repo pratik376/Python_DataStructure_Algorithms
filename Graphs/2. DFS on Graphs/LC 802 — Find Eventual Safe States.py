@@ -11,6 +11,7 @@ class Solution:
 
             if i in safe:
                 return safe[i]
+            safe[i]=False
             
 
 
