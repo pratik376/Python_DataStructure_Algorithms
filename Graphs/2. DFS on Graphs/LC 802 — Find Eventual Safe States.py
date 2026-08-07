@@ -12,13 +12,13 @@ class Solution:
             if i in safe:
                 return safe[i]
             safe[i]=False
-            
+            for nei in graph[i]:
 
+                if not dfs(i): # if not safe
+                    return False
 
-
-
-
-
+            safe[i]=True
+            return safe[i]
 
         res=[]
 
