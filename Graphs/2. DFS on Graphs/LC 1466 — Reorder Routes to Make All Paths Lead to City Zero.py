@@ -24,7 +24,7 @@ class Solution:
 
             for nei in neighbours[city]:
 
-                if not nei in visited:
+                if nei not in visited:
                     visited.add(nei)
 
                     if (city, nei)  in graph:
