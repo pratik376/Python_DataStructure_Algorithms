@@ -27,7 +27,7 @@ class Solution:
                 if not nei in visited:
                     visited.add(nei)
 
-                    if (city, nei) not in graph:
+                    if (city, nei)  in graph:
                         answer+=1
                     dfs(nei)
 
