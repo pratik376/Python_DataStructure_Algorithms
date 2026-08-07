@@ -18,6 +18,17 @@ class Solution:
             neighbours[b].append(a)
 
 
-        def dfs()
+        def dfs(city):
+
+            nonlocal neighbours,graph,visited,answer
+
+            for nei in neighbours[city]:
+
+                if not nei in visited:
+                    visited.add(nei)
+                    
+
+
+            
 
         
