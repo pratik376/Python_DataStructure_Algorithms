@@ -7,11 +7,13 @@ class Solution:
         ROWS, COLUMS= len(image), len(image[0])
 
         original_color= image[sr][sc]
+        if original_color == color:
+         return image
 
 
         def coloring(r,c):
 
-            if (r< 0 or c <0 or r==ROWS  or c==COLUMS or image[r][c] != original_color or image[r][c]==color):
+            if (r< 0 or c <0 or r==ROWS  or c==COLUMS or image[r][c] != original_color):
                 return
 
             if image[r][c] == original_color:
