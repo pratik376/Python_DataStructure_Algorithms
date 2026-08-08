@@ -21,7 +21,6 @@ class Solution:
 
                 i, j = stack.pop()
 
-
                 for R,C in directions:
                     nR,nC= R+i, C+j
 
@@ -32,13 +31,14 @@ class Solution:
 
                 
 
-
         for i in range(ROWS):
             for j in range(COLUMS):
 
                 if grid[i][j]=='1' and (i,j) not in visited:
                     islands+=1
                     dfs(i,j)
+
+        return islands
 
 
         
