@@ -18,7 +18,6 @@ class Solution:
 
             if image[r][c] == original_color:
                 image[r][c]= color
-
                 coloring(r,c+1)
                 coloring(r,c-1)
                 coloring(r+1,c)
