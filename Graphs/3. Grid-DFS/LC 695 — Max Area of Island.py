@@ -15,6 +15,7 @@ class Solution:
         def dfs(i,j):
 
             stack=[(i,j)]
+            visited.add((i,j))
             cell_count=0
 
             while stack:
