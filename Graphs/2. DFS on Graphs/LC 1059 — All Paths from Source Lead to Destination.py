@@ -1,5 +1,7 @@
 from typing import List
 from collections import defaultdict
+
+
 class Solution:
     def leadsToDestination(
         self,
@@ -9,32 +11,41 @@ class Solution:
         destination: int
     ) -> bool:
 
+        graph = defaultdict(list)
 
-        graph= defaultdict(list)
-
-        for a,b in edges:
-
+        for a, b in edges:
             graph[a].append(b)
 
-        stack=[source]
-        visited= set()
+        path = set()
 
+        # (node, entering)
+        stack = [(source, True)]
 
         while stack:
 
-            node= stack.pop()
+            node, entering = stack.pop()
 
-            if not node==destination and not graph[node]:
-                return False
+            if entering:
 
+                # Cycle
+                if node in path:
+                    return False
 
-            for nei in graph[node]:
+                # Leaf
+                if not graph[node]:
+                    if node != destination:
+                        return False
+                    continue
 
-               if node in graph[nei]:
-                   return False
+                path.add(node)
 
-               stack.append(nei)
+                # Come back later and remove node
+                stack.append((node, False))
+
+                for nei in reversed(graph[node]):
+                    stack.append((nei, True))
+
+            else:
+                path.remove(node)
 
         return True
-
-    
