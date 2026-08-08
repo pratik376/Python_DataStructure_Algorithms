@@ -18,7 +18,7 @@ class Solution:
             stack=[(i,j)]
 
             if (i,j) not in visited and grid[i][j]>=1:
-                fish+=1
+                fish+=grid[i][j]
 
             visited.add((i,j))
 
@@ -31,7 +31,7 @@ class Solution:
 
                 visited.add((nR,nC))
                 stack.append((nR,nC))
-                fish+=1
+                fish+=grid[nR][nC]
 
             return fish
         
