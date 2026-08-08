@@ -11,7 +11,7 @@ class Solution:
 
         def coloring(r,c):
 
-            if (r==ROWS-1 or c==COLUMS-1 or r==ROWS + 1 or c==COLUMS+1 or image[r][c] != original_color):
+            if (r< 0 or c <0 or r==ROWS  or c==COLUMS or image[r][c] != original_color or image[r][c]==color):
                 return
 
             if image[r][c] == original_color:
