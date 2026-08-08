@@ -15,10 +15,11 @@ class Solution:
         def dfs(i,j):
 
             stack=[(i,j)]
+            cell_count=0
             if (i,j) not in visited and grid[i][j]==1:
                 cell_count+=1
             visited.add((i,j))
-            cell_count=0
+           
           
 
             while stack:
