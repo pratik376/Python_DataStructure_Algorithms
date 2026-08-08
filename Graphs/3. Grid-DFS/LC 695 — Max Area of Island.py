@@ -24,7 +24,7 @@ class Solution:
                 for R,C in directions:
                     nR, nC= i+R, j+C
 
-                    if nR < 0 or nC< 0 or nR==ROWS or nC==COLUMNS or (nR,nC) in visited or grid[nR][nC]=='0':
+                    if nR < 0 or nC< 0 or nR==ROWS or nC==COLUMNS or (nR,nC) in visited or grid[nR][nC]==0:
                         continue
 
                     visited.add((nR,nC))
@@ -37,7 +37,7 @@ class Solution:
 
             for j in range(COLUMNS):
 
-                if (i,j) not in visited and grid[i][j] !='0':
+                if (i,j) not in visited and grid[i][j] !=0:
 
                     answer=max(answer,dfs(i,j))
 
