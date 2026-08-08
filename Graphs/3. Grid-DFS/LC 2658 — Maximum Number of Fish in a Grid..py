@@ -24,6 +24,8 @@ class Solution:
 
             while stack:
 
+                i, j= stack.pop()
+
                 for R,C in directions:
 
                     nR,nC = R+i, C+j
