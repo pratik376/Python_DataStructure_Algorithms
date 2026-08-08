@@ -22,6 +22,9 @@ class Solution:
 
                 i, j = stack.pop()
 
+                if (i,j) not in visited and grid[i][j]==1:
+                    cell_count+=1
+
                 for R,C in directions:
                     nR, nC= i+R, j+C
 
