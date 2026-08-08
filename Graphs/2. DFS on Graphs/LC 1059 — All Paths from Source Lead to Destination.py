@@ -30,11 +30,10 @@ class Solution:
 
             for nei in graph[node]:
 
-                if nei in visited:
-                    return False
-                else:
-                    visited.add(nei)
-                    stack.append(nei)
+               if node in graph[nei]:
+                   return False
+
+               stack.append(nei)
 
         return True
 
