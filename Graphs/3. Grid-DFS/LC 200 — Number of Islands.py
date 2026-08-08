@@ -30,16 +30,7 @@ class Solution:
                     visited.add((nR,nC))
                     stack.append((nR,nC))
 
-                    
-
-
-
-
-
-
-
-
-
+                
 
 
         for i in range(ROWS):
