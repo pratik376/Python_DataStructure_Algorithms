@@ -22,16 +22,18 @@ class Solution:
 
             visited.add((i,j))
 
-            for R,C in directions:
+            while stack:
 
-                nR,nC = R+i, C+j
+                for R,C in directions:
 
-                if nR < 0 or nC< 0 or nR>=ROWS or nC>=COLUMS or (nR,nC) in visited or grid[nR][nC] ==0:
-                    continue
+                    nR,nC = R+i, C+j
 
-                visited.add((nR,nC))
-                stack.append((nR,nC))
-                fish+=grid[nR][nC]
+                    if nR < 0 or nC< 0 or nR>=ROWS or nC>=COLUMS or (nR,nC) in visited or grid[nR][nC] ==0:
+                        continue
+
+                    visited.add((nR,nC))
+                    stack.append((nR,nC))
+                    fish+=grid[nR][nC]
 
             return fish
         
