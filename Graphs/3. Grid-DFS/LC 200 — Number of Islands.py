@@ -1,6 +1,6 @@
 from typing import List
 
-
+# if perticular position is not defined then you need to try all the positios
 class Solution:
     def numIslands(self, grid: List[List[str]]) -> int:
 
@@ -24,13 +24,12 @@ class Solution:
                 for R,C in directions:
                     nR,nC= R+i, C+j
 
-                    if nR < 0 or nC < 0 or nR==ROWS or nC==COLUMS or (nR,nC) in visited:
+                    if nR < 0 or nC < 0 or nR==ROWS or nC==COLUMS or (nR,nC) in visited or grid[nR][nC]!='1':
                         continue
                     visited.add((nR,nC))
                     stack.append((nR,nC))
 
-                
-
+        
         for i in range(ROWS):
             for j in range(COLUMS):
 
