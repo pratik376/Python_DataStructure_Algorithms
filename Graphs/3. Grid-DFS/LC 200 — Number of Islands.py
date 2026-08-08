@@ -24,7 +24,7 @@ class Solution:
                 for R,C in directions:
                     nR,nC= R+i, C+j
 
-                    if nR < 0 or nC < 0 or nR==ROWS or nC==COLUMS or (nR,nC) in visited or grid[nR][nC]!='1':
+                    if nR < 0 or nC < 0 or nR==ROWS or nC==COLUMS or (nR,nC) in visited or grid[nR][nC]!='1': # aprat from fixed conditions check what else need to check
                         continue
                     visited.add((nR,nC))
                     stack.append((nR,nC))
