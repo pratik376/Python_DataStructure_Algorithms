@@ -18,13 +18,19 @@ class Solution:
             while stack:
                 i,j =stack.pop()
 
+                if (i,j) not in visited and i>= len(grid) or j>=len(grid[0]) or i<0 or j< 0 or grid[i][j]==0:
+                    answer+=1
+
+                visited.add((i,j))
+
+
                 for R,C in directions:
                     nR,nC= R+i,C+j
 
-                    if  (nR,nC) in visited :
+                    if (nR,nC) in visited :
                         continue
 
-                    if nR==-1 or nR==ROWS+1 or nC== -1 or nC== COLUMS+1 or grid[nR][nC]==0:
+                    if nR>= len(grid) or nC>=len(grid[0]) or nR<0 or nC< 0 or grid[nR][nC]==0:
                         answer+=1
 
                     visited.add((nR,nC))
