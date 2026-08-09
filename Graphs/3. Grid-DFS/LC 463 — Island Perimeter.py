@@ -1,48 +1,55 @@
 from typing import List
 
-
 class Solution:
     def islandPerimeter(self, grid: List[List[int]]) -> int:
 
-        ROWS, COLUMS =len(grid), len(grid[0])
-        visited= set()
-        answer=0
+        ROWS, COLUMNS = len(grid), len(grid[0])
 
-        directions= [(1,0),(-1,0),(0,1),(0,-1)]
+        visited = set()
+        directions = [(1,0), (-1,0), (0,1), (0,-1)]
 
-        def dfs(i,j):
+        def dfs(i, j):
 
-            stack=[(i,j)]
+            stack = [(i, j)]
+            visited.add((i, j))
 
+            perimeter = 0
 
             while stack:
-                i,j =stack.pop()
 
-                if (i,j) not in visited and i>= len(grid) or j>=len(grid[0]) or i<0 or j< 0 or grid[i][j]==0:
-                    answer+=1
+                i, j = stack.pop()
 
-                visited.add((i,j))
+                for R, C in directions:
 
+                    nR, nC = i + R, j + C
 
-                for R,C in directions:
-                    nR,nC= R+i,C+j
-
-                    if (nR,nC) in visited :
+                    # Neighbor is outside the grid
+                    if (
+                        nR < 0 or nC < 0 or
+                        nR >= ROWS or nC >= COLUMNS
+                    ):
+                        perimeter += 1
                         continue
 
-                    if nR>= len(grid) or nC>=len(grid[0]) or nR<0 or nC< 0 or grid[nR][nC]==0:
-                        answer+=1
+                    # Neighbor is water
+                    if grid[nR][nC] == 0:
+                        perimeter += 1
+                        continue
 
-                    if not grid[nR][nC] ==0:
+                    # Neighbor is land but already visited
+                    if (nR, nC) in visited:
+                        continue
 
-                        visited.add((nR,nC))
-                        stack.append((nR,nC))
+                    # Neighbor is new land
+                    visited.add((nR, nC))
+                    stack.append((nR, nC))
 
+            return perimeter
 
         for i in range(ROWS):
-            for j in range(COLUMS):
+            for j in range(COLUMNS):
 
-                if grid[i][j] != 0 and (i,j) not in visited:
+                if grid[i][j] == 1 and (i, j) not in visited:
+                    return dfs(i, j)
 
-                    dfs(i,j)
-        return answer
+        return 0
