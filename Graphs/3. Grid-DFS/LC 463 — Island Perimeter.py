@@ -33,8 +33,10 @@ class Solution:
                     if nR>= len(grid) or nC>=len(grid[0]) or nR<0 or nC< 0 or grid[nR][nC]==0:
                         answer+=1
 
-                    visited.add((nR,nC))
-                    stack.append((nR,nC))
+                    if not grid[nR][nC] ==0:
+
+                        visited.add((nR,nC))
+                        stack.append((nR,nC))
 
 
         for i in range(ROWS):
