@@ -21,7 +21,7 @@ class Solution:
                 for R,C in directions:
                     nR,nC= R+i,C+j
 
-                    if nR <-1 or nC < -1 or nR>ROWS+1 or nC>COLUMS+1 or (nR,nC) in visited :
+                    if  (nR,nC) in visited :
                         continue
 
                     if nR==-1 or nR==ROWS+1 or nC== -1 or nC== COLUMS+1 or grid[nR][nC]==0:
