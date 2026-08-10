@@ -15,10 +15,13 @@ class Solution:
             visited.add((i,j))
             isIsland=True
 
+            if grid[i][j]== 0 and i==0 or i==ROWS-1 or j==0 or j== COLUMNS-1:
+                isIsland=False
+
 
             while stack:
                 i,j = stack.pop()
-               
+
                 for r,c in directions:
 
                     nR,nC= r+i, c+j
