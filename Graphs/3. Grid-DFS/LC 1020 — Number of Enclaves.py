@@ -48,4 +48,5 @@ class Solution:
 
                 if grid[i][j]==1 and not (i,j) in visited:
                     final_answer+=dfs(i,j)
+        return final_answer
         
