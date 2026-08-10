@@ -56,7 +56,6 @@ def closedIsland(self, grid: List[List[int]]) -> int:
         closed_island=0
 
 
-
         def dfs(i,j):
 
             if (i <0 or j < 0 or i==ROWS or j==COLUMNS):
