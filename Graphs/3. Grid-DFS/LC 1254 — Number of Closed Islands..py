@@ -74,7 +74,6 @@ def closedIsland(self, grid: List[List[int]]) -> int:
             )
 
 
-
         for i in range(ROWS):
             for j in range(COLUMNS):
         
