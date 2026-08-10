@@ -50,6 +50,41 @@ class Solution:
 
         return closed_island
 
+def closedIsland(self, grid: List[List[int]]) -> int:
+        ROWS, COLUMNS = len(grid),len(grid[0])
+        visited= set()
+        closed_island=0
+
+        directions = [(0,1),(0,-1),(-1,0),(1,0)]
+
+        def dfs(i,j):
+
+            stack=[(i,j)]
+            visited.add((i,j))
+            isIsland=True
+
+            if grid[i][j]== 0 and i==0 or i==ROWS-1 or j==0 or j== COLUMNS-1:
+                isIsland=False
+
+
+            while stack:
+                i,j = stack.pop()
+
+                for r,c in directions:
+
+                    nR,nC= r+i, c+j
+
+                    if nR < 0 or nR >=ROWS or nC< 0 or nC >= COLUMNS or  (nR,nC) in visited or grid[nR][nC]==1:
+                        continue
+
+                    if grid[nR][nC]== 0 and (nR==0 or nR==ROWS-1 or nC==0 or nC== COLUMNS-1):
+                        visited.add((nR,nC))
+                        isIsland=False
+
+                    visited.add((nR,nC))
+                    stack.append((nR,nC))
+
+            return isIsland
 
 
 
