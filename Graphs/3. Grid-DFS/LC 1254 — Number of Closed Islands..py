@@ -31,6 +31,7 @@ class Solution:
                         return False
 
                     visited.add((nR,nC))
+                    stack.append((nR,nC))
 
             return True
 
