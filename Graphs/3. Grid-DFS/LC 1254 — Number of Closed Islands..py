@@ -13,13 +13,12 @@ class Solution:
 
             stack=[(i,j)]
             visited.add((i,j))
+            isIsland=True
 
 
             while stack:
                 i,j = stack.pop()
-                isIsland=True
-
-
+               
                 for r,c in directions:
 
                     nR,nC= r+i, c+j
