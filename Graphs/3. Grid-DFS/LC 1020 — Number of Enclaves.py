@@ -8,10 +8,11 @@ class Solution:
         directions= [(1,0),(-1,0),(0,1),(0,-1)]
 
         visited= set()
-        answer=0
+        final_answer=0
+        
 
         def dfs(i,j):
-
+            answer=0
             stack=[(i,j)]
             visited.add((i,j))
             isBoundry=0
@@ -22,28 +23,24 @@ class Solution:
             elif grid[i][j]==1 and ( 0<i and i>ROWS)  and ( 0<j and j < ROWS):
                 answer+=1
 
-            for r,c in directions:
+            while stack:
+                i,j =stack.pop()
 
-                nR,nC= r+i, c+j
+                for r,c in directions:
 
-                if nR < 0 or nC< 0 or nR==ROWS or nC==COLS or (nR,nC) in visited or grid[nR][nC]==0:
-                    continue
-                
+                    nR,nC= r+i, c+j
+
+                    if nR < 0 or nC< 0 or nR==ROWS or nC==COLS or (nR,nC) in visited or grid[nR][nC]==0:
+                        continue
+
 
 
             
 
-            
-
-
-
-
-
-
-
+    
         for i in range(ROWS):
             for j in range(COLS):
 
                 if grid[i][j]==1 and not (i,j) in visited:
-                    dfs(i,j)
+                    final_answer+=dfs(i,j)
         
