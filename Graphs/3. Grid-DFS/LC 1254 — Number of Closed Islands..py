@@ -17,7 +17,9 @@ class Solution:
 
             while stack:
                 i,j = stack.pop()
+
                 
+
 
 
 
