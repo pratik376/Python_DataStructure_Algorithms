@@ -17,6 +17,7 @@ class Solution:
 
             while stack:
                 i,j = stack.pop()
+                isIsland=True
 
 
                 for r,c in directions:
@@ -28,7 +29,7 @@ class Solution:
 
                     if grid[nR][nC]== 0 and (nR==0 or nR==ROWS-1 or nC==0 or nC== COLUMNS-1):
                         visited.add((nR,nC))
-                        return False
+                        isIsland=False
 
                     visited.add((nR,nC))
                     stack.append((nR,nC))
