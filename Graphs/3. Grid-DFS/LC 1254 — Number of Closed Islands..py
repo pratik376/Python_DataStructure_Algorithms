@@ -34,7 +34,7 @@ class Solution:
                     visited.add((nR,nC))
                     stack.append((nR,nC))
 
-            return True
+            return isIsland
 
 
 
