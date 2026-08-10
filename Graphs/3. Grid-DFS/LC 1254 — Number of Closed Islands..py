@@ -18,7 +18,17 @@ class Solution:
             while stack:
                 i,j = stack.pop()
 
-                
+
+                for r,c in directions:
+
+                    nR,nC= r+i, c+j
+
+                    if grid[nR][nC]== 0 and nR==0 or nR==ROWS-1 or nC==0 or nC== COLUMNS-1:
+                         
+
+
+
+
 
 
 
