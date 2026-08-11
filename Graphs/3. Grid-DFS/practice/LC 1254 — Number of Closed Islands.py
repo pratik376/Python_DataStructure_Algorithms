@@ -28,8 +28,8 @@ class Solution:
 
                     if grid[nR][nC]== 0 and nR==0 or nC==0 or nR==ROWS-1 or nC==COLS -1:
                         isClosed=False
-                        visited.add((i,j))
-                        stack.append((i,j))
+                    visited.add((i,j))
+                    stack.append((i,j))
 
             return island if isClosed else 0            
 
