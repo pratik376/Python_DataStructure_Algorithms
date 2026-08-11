@@ -101,7 +101,7 @@ class Solution:
         
 
         def dfs(i,j):
-            answer=0
+     
             stack=[(i,j)]
             visited.add((i,j))
             isBoundry=0
@@ -112,11 +112,10 @@ class Solution:
             while stack:
                 i,j =stack.pop()
 
-                count+=1 # of current
+                count+=1 # of current cell
                 if (i==0 or i==ROWS-1) or (j==0 or j==COLS-1):
                     isBoundry=1
-                if ( 0<i and i<ROWS)  and ( 0<j and j < COLS):
-                    count+=1
+               
 
                 for r,c in directions:
 
@@ -128,7 +127,7 @@ class Solution:
                     visited.add((nR,nC))
                     stack.append((nR,nC))
 
-            return 0 if isBoundry else answer
+            return 0 if isBoundry else count
     
         for i in range(ROWS):
             for j in range(COLS):
