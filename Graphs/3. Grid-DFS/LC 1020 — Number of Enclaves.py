@@ -60,10 +60,9 @@ class Solution:
         final_answer=0
         directions= [(1,0),(-1,0),(0,1),(0,-1)]
         
-
         def dfs(r,c):
 
-            if r==0 or r== ROWS-1 or c==0 or c==COLS-1:
+            if r==0 or r== ROWS-1 or c==0 or c==COLS-1 or not grid[r][c]:
                 return 0
 
             answer=1
