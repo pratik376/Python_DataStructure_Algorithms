@@ -28,9 +28,6 @@ class Solution:
 
                     if nR < 0 or nC< 0 or nR==ROWS or nC==COLS or (nR,nC) in visited or grid[nR][nC]==1:
                         continue
-
-                    if grid[nR][nC]== 0 and nR==0 or nC==0 or nR==ROWS-1 or nC==COLS -1:
-                        isClosed=False
                     visited.add((nR,nC))
                     stack.append((nR,nC))
 
