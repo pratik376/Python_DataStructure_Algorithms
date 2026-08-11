@@ -31,11 +31,10 @@ class Solution:
                     if nR < 0 or nC< 0 or nR==ROWS2 or nC==COLS2 or (nR,nC) in visited or grid2[nR][nC]==0:
                         continue
 
-                    visited.add((i,j))
-                    stack.append((i,j))
+                    visited.add((nR,nC))
+                    stack.append((nR,nC))
 
             return isSubIsland
-
 
         sub_island=0
         for i in range(ROWS2):
