@@ -13,7 +13,7 @@ class Solution:
             stack= [(i,j)]
             visited.add((i,j))
             isClosed= True
-            island=0
+            
 
             while stack:
 
@@ -31,7 +31,7 @@ class Solution:
                     visited.add((nR,nC))
                     stack.append((nR,nC))
 
-            return island if isClosed else 0            
+            return isClosed           
 
                 
         answer =0
