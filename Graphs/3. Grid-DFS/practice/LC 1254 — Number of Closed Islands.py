@@ -23,16 +23,13 @@ class Solution:
 
                     nR,nC = r+i, c+j
 
-                    if nR < 0 or nC< 0 or nR==ROWS or nC==COLS or (nR,nC) in visited:
+                    if nR < 0 or nC< 0 or nR==ROWS or nC==COLS or (nR,nC) in visited or grid[nR][nC]==1:
                         continue
 
                     if grid[nR][nC]== 0 and nR==0 or nC==0 or nR==ROWS-1 or nC==COLS -1:
                         isClosed=False
                         visited.add((i,j))
                         stack.append((i,j))
-
-                    if grid[nR][nC]==1 and nR in [0, ROWS-1] and nC in [0,COLS-1]:
-                        island+=1
 
             return island if isClosed else 0            
 
