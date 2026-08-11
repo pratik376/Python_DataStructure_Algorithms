@@ -35,8 +35,6 @@ class Solution:
 
             return tuple(sorted(shape))
                 
-
-
         for i in range(ROWS):
             for j in range(COLS):
 
