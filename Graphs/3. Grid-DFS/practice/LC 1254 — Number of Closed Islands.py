@@ -19,6 +19,9 @@ class Solution:
 
                 i, j = stack.pop()
 
+                if i==0 or j == 0 or i == ROWS-1 or j== COLS-1:
+                    isClosed=False
+
                 for r,c in directions:
 
                     nR,nC = r+i, c+j
