@@ -7,13 +7,14 @@ class Solution:
 
         directions= [(1,0),(-1,0),(0,1),(0,-1)]
         visited= set()
-        shapes=set()
+        shapes=set
 
 
 
         def dfs(i,j):
 
             statR,startC=i,j
+            shape=[]
 
             stack=[(i,j)]
             visited.add((i,j))
@@ -26,19 +27,23 @@ class Solution:
 
                 for r,c in directions:
                     nR,nC= r+ i, c +j
-                    
 
+                    if nR < 0 or nC< 0 or nR==ROWS or nC==COLS or (nR,nC) in visited or grid[nR][nC]==0:
+                        continue
+                    visited.add((nR,nC))
+                    stack.append((nR,nC))
 
-
+            return tuple(sorted(shape))
+                
 
 
         for i in range(ROWS):
             for j in range(COLS):
 
                 if grid[i][j]== 1 and (i,j) not in visited:
-                    dfs(i,j)
+                    shapes.add(dfs(i,j))
 
-        return 
+        return len(shapes)
 
 
 
