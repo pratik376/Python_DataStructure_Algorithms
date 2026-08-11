@@ -113,7 +113,10 @@ class Solution:
                 i,j =stack.pop()
 
                 count+=1 # of current
-
+                if (i==0 or i==ROWS-1) or (j==0 or j==COLS-1):
+                    isBoundry=1
+                if ( 0<i and i<ROWS)  and ( 0<j and j < COLS):
+                    count+=1
 
                 for r,c in directions:
 
@@ -121,12 +124,7 @@ class Solution:
 
                     if nR < 0 or nC< 0 or nR==ROWS or nC==COLS or (nR,nC) in visited or grid[nR][nC]==0:
                         continue
-
-                    if (nR==0 or nR==ROWS-1) or (nC==0 or nC==COLS-1):
-                        isBoundry=True
-
-                    if ( 0<nR and nR<ROWS)  and ( 0<nC and nC < COLS):
-                        answer+=1
+                    
                     visited.add((nR,nC))
                     stack.append((nR,nC))
 
