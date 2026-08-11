@@ -29,6 +29,8 @@ class Solution:
 
                     if nR==0 or nC==0 or nC==ROWS-1 or nC==COLS -1:
                         isClosed=False
+                        visited.add((i,j))
+                        stack.append((i,j))
 
                     if grid[nR][nC]==1 and nR in [0, ROWS-1] and nC in [0,COLS-1]:
                         island+=1
