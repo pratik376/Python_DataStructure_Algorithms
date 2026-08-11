@@ -10,15 +10,32 @@ class Solution:
 
         def dfs(i,j):
 
+            stack= [(i,j)]
+            visited.add((i,j))
+            isClosed= True
+            island=0
+
+            while stack:
+
+                i, j = stack.pop()
 
 
+                for r,c in directions:
 
+                    nR,nC = r+i, c+j
 
+                    if nR < 0 or nC< 0 or nR==ROWS or nC==COLS or (nR,nC) in visited:
+                        continue
 
+                    if nR==0 or nC==0 or nC==ROWS-1 or nC==COLS -1:
+                        isClosed=False
 
+                    if grid[nR][nC]==1 and nR in [0, ROWS-1] and nC in [0,COLS-1]:
+                        island+=1
 
+            return island if isClosed else 0            
 
-
+                
         answer =0
         for i in range(ROWS):
             for j in range(COLS):
