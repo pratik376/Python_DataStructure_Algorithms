@@ -49,4 +49,36 @@ class Solution:
                 if grid[i][j]==1 and not (i,j) in visited:
                     final_answer+=dfs(i,j)
         return final_answer
+
+
+class Solution:
+    def numEnclaves(self, grid: List[List[int]]) -> int:
+
+        ROWS, COLS= len(grid), len(grid[0])
+       
+        visited= set()
+        final_answer=0
+        directions= [(1,0),(-1,0),(0,1),(0,-1)]
+        
+
+        def dfs(r,c):
+
+            if r==0 or r== ROWS-1 or c==0 or c==COLS-1:
+                return 0
+
+            answer=1
+
+            visited.add((i,j))
+
+            for nr,nc in directions:
+                answer += dfs(r+nr,c+nc)
+
+            return answer
+
+        for i in range(ROWS):
+            for j in range(COLS):
+
+                if grid[i][j]==1 and not (i,j) in visited:
+                    final_answer+=dfs(i,j)
+        return final_answer
         
