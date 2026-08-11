@@ -105,9 +105,7 @@ class Solution:
             stack=[(i,j)]
             visited.add((i,j))
             isBoundry=0
-            count=0
-
-           
+            count=0           
 
             while stack:
                 i,j =stack.pop()
