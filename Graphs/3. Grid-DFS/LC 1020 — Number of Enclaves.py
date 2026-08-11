@@ -62,7 +62,7 @@ class Solution:
         
         def dfs(r,c):
 
-            if r==0 or r== ROWS-1 or c==0 or c==COLS-1 or not grid[r][c]:
+            if r<0 or c<0 or r==0 or r== ROWS or c==0 or c==COLS or r== ROWS-1 or c==COLS-1 or not grid[r][c] or (r,c) in visited:
                 return 0
 
             answer=1
