@@ -51,33 +51,40 @@ class Solution:
         return final_answer
 
 
+from typing import List
+
 class Solution:
     def numEnclaves(self, grid: List[List[int]]) -> int:
+        ROWS, COLS = len(grid), len(grid[0])
 
-        ROWS, COLS= len(grid), len(grid[0])
-       
-        visited= set()
-        final_answer=0
-        directions= [(1,0),(-1,0),(0,1),(0,-1)]
-        
-        def dfs(r,c):
-
-            if r<0 or c<0 or r==0 or r== ROWS or c==0 or c==COLS or r== ROWS-1 or c==COLS-1 or not grid[r][c] or (r,c) in visited:
+        # Return num of land cells
+        def dfs(r, c):
+            if (r < 0 or c < 0 or
+                r == ROWS or c == COLS or
+                not grid[r][c] or (r, c) in visit):
                 return 0
 
-            answer=1
+            visit.add((r, c))
 
-            visited.add((i,j))
+            res = 1
+            direct = [[0, 1], [0, -1], [1, 0], [-1, 0]]
 
-            for nr,nc in directions:
-                answer += dfs(r+nr,c+nc)
+            for dr, dc in direct:
+                res += dfs(r + dr, c + dc)
 
-            return answer
+            return res
 
-        for i in range(ROWS):
-            for j in range(COLS):
+        visit = set()
+        land, borderLand = 0, 0
 
-                if grid[i][j]==1 and not (i,j) in visited:
-                    final_answer+=dfs(i,j)
-        return final_answer
-        
+        for r in range(ROWS):
+            for c in range(COLS):
+                land += grid[r][c]
+
+                if (grid[r][c] and
+                    (r, c) not in visit and
+                    (c in [0, COLS - 1] or r in [0, ROWS - 1])):
+
+                    borderLand += dfs(r, c)
+
+        return land - borderLand
