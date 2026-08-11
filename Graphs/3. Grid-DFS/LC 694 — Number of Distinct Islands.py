@@ -18,7 +18,17 @@ class Solution:
             stack=[(i,j)]
             visited.add((i,j))
 
-            
+            while stack:
+
+                i,j = stack.pop()
+
+                shapes.append((i-statR,j-startC))
+
+                for r,c in directions:
+                    nR,nC= r+ i, c +j
+                    
+
+
 
 
 
