@@ -44,6 +44,7 @@ class Solution:
 
                 if grid[i][j]==0 or (i,j) not in visited:
 
-                    answer += dfs(i,j)
+                    if dfs(i,j):
+                        answer+=1
         return answer
         
