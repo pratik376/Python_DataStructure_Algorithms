@@ -19,7 +19,6 @@ class Solution:
 
                 i, j = stack.pop()
 
-
                 for r,c in directions:
 
                     nR,nC = r+i, c+j
@@ -27,7 +26,7 @@ class Solution:
                     if nR < 0 or nC< 0 or nR==ROWS or nC==COLS or (nR,nC) in visited:
                         continue
 
-                    if grid[nR][nC]== 0 and nR==0 or nC==0 or nC==ROWS-1 or nC==COLS -1:
+                    if grid[nR][nC]== 0 and nR==0 or nC==0 or nR==ROWS-1 or nC==COLS -1:
                         isClosed=False
                         visited.add((i,j))
                         stack.append((i,j))
@@ -42,7 +41,7 @@ class Solution:
         for i in range(ROWS):
             for j in range(COLS):
 
-                if grid[i][j]==0 or (i,j) not in visited:
+                if grid[i][j]==0 and (i,j) not in visited:
 
                     if dfs(i,j):
                         answer+=1
