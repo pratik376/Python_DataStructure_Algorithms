@@ -20,7 +20,7 @@ class Solution:
 
                 if nei not in visited:
                     visited.add(nei)
-                    stack.append(room)
+                    stack.append(nei)
 
 
         return len(visited)== len(rooms)
