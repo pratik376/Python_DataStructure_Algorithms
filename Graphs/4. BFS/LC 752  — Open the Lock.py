@@ -12,9 +12,9 @@ class Solution:
         visited= set(deadends)
 
         q=deque()
-        q.append(["0000",0])
+        q.append(("0000",0))
 
-        visited.add(["0000",0]) # lock value
+        visited.add("0000") # lock value
 
         def children(lock):
 
