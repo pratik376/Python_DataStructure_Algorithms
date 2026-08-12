@@ -40,7 +40,7 @@ class Solution:
 
                 if child not in visited:
                     visited.add(child)
-                    q.append([child,leval+1])
+                    q.append((child,leval+1))
 
         return -1
 
