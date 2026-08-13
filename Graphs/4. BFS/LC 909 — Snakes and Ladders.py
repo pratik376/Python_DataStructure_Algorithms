@@ -6,7 +6,8 @@ class Solution:
 
         n= len(board)
         board.reverse()
-        q=deque([1,0]) # squre and steps
+        q=deque() # squre and steps
+        q.append([1,0])
         visited= set()
 
         def intToPosition(sqare):
@@ -17,7 +18,6 @@ class Solution:
                 c=len -1 -c
 
             return [r,c]
-
 
         while q:
 
