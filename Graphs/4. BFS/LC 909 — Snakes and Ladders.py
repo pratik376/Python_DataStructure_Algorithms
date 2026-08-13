@@ -29,13 +29,16 @@ class Solution:
             for i in range(1,7):
 
                 nextSqaure=sqare+i
+
+                if nextSqaure > n * n:
+                    continue
                 r,c = intToPosition(nextSqaure)
+
 
                 if board[r][c] != -1:
                     nextSqaure=board[r][c]
 
-                if nextSqaure > n * n:
-                    continue
+               
 
                 if nextSqaure not in visited:
                     q.append([nextSqaure, step+1])
