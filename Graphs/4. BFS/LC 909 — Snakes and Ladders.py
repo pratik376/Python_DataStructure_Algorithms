@@ -38,8 +38,6 @@ class Solution:
                 if board[r][c] != -1:
                     nextSqaure=board[r][c]
 
-               
-
                 if nextSqaure not in visited:
                     q.append([nextSqaure, step+1])
                     visited.add(nextSqaure)
