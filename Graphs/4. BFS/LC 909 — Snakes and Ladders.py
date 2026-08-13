@@ -9,6 +9,7 @@ class Solution:
         q=deque() # squre and steps
         q.append([1,0])
         visited= set()
+        visited.add(1)
 
         def intToPosition(sqare):
             r= (sqare-1)// n
