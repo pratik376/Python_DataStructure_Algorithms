@@ -16,7 +16,7 @@ class Solution:
             c=(sqare-1) % n
 
             if r %2 :
-                c=len -1 -c
+                c=n-1 -c
 
             return [r,c]
 
@@ -33,6 +33,9 @@ class Solution:
 
                 if board[r][c] != -1:
                     nextSqaure=board[r][c]
+
+                if nextSqaure > n * n:
+                    continue
 
                 if nextSqaure not in visited:
                     q.append([nextSqaure, step+1])
