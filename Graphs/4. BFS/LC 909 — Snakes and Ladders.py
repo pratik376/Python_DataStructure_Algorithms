@@ -34,7 +34,6 @@ class Solution:
                     continue
                 r,c = intToPosition(nextSqaure)
 
-
                 if board[r][c] != -1:
                     nextSqaure=board[r][c]
 
