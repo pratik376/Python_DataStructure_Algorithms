@@ -14,7 +14,17 @@ class Solution:
 
                 map[j].append(i)
 
+        if source==target:
+            return 0
+
         q=deque()
         visited=set()
 
-        
+        q.append([source, map[source]])
+        visited.add(source)
+
+
+        while q:
+
+            station,bus_number =q.popleft()
+
