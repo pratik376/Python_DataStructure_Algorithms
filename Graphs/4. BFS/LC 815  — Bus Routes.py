@@ -20,9 +20,10 @@ class Solution:
         q=deque()
         visited=set()
 
-        q.append([source, map[source]])
-        visited.add(source)
 
+        for bus in map[source]:
+            q.append((bus,1))
+            visited.add(bus)
 
         while q:
 
