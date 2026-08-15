@@ -27,5 +27,20 @@ class Solution:
 
         while q:
 
-            station,bus_number =q.popleft()
+            bus, bus_taken= q.popleft()
+
+            for stop in routes[bus]:
+
+                if target==stop:
+                    return bus_taken
+
+                for nextBus in map[stop]:
+
+                    if nextBus not in visited:
+                        visited.add(nextBus)
+                        q.append((nextBus,bus_taken+1))
+
+        return -1
+                    
+
 
