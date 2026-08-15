@@ -33,7 +33,18 @@ class Solution:
                 for nei in red[node]:
 
                     if nei not in visited:
-                        
+                        visited.add((nei,'RED'))
+                        q.append([nei,length +1, "RED"])
+
+            if color != 'BLUE':
+                for nei in red[node]:
+
+                    if nei not in visited:
+                        visited.add((nei,'BLUE'))
+                        q.append([nei,length +1, "BLUE"])
+
+        return answer
+
 
         
 
