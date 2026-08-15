@@ -19,6 +19,22 @@ class Solution:
 
         answer=[-1] * n
 
+        q.append([0,0,None])  # (node, length, color)
+        visited.add((0,None)) #  (node, color)
+
+        while q:
+
+            node, length, color=q.popleft()
+
+            if answer[node]==-1:
+                answer[node]= length
+
+            if color != 'RED':
+                for nei in red[node]:
+
+                    if nei not in visited:
+                        
+
         
 
         
