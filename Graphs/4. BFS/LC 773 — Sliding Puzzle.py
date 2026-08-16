@@ -12,7 +12,7 @@ class Solution:
             5: [2, 4]
         }
 
-        b= " ".join(str(c) for row in board for c in row)
+        b= "".join(str(c) for row in board for c in row)
 
 
         q=deque()
