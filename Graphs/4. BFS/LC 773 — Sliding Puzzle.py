@@ -12,3 +12,30 @@ class Solution:
             5: [2, 4]
         }
 
+        b= " ".join(str(c) for row in board for c in row)
+
+
+        q=deque()
+        visited=set()
+
+        q.append((b.index('0'),b,0)) # index, string , lenghth
+        visited.add(b)
+
+
+        while q:
+            index, string, length=q.popleft()
+
+            if string=='123450':
+                return length
+
+
+            b=list(string)
+
+            for j in adj[index]:
+
+                new_b= b.copy()
+
+                new_b[j],new_b[index]=new_b[j],new_b[index]
+
+
+
