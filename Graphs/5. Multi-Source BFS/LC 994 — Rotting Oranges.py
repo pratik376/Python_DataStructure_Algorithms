@@ -15,6 +15,8 @@ class Solution:
             q= deque()
             q.append((i,j,0))
 
+            visited.add((i,j))
+
             while q:
 
                 i,j,time= q.popleft()
