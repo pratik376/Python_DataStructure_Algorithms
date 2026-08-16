@@ -10,12 +10,9 @@ class Solution:
         visited= set()
         answer=-1
 
-        def BFS(i,j):
+        def BFS(q):
 
-            q= deque()
-            q.append((i,j,0))
-
-            visited.add((i,j))
+        
 
             while q:
 
@@ -34,7 +31,8 @@ class Solution:
                     q.append((nR,nC,time+1))
                     visited.add((nR,nC))
 
-
+        q=deque()
+        
         non_zero_count=0
         for i in range(ROWS):
             for j in range(COLS):
@@ -42,10 +40,11 @@ class Solution:
                 if grid[i][j]!=0:
                     non_zero_count+=1
 
-                if grid[i][j]==2 and (i,j) not in visited:
-                    BFS(i,j)
-                
-                
+                if grid[i][j]==2:
+                    visited.add((i,j))
+                    q.append((i,j,0))
+
+        BFS(q)  
 
         return answer if non_zero_count == len(visited) else -1
         
