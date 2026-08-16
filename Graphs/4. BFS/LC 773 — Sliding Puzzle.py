@@ -35,7 +35,7 @@ class Solution:
 
                 new_b= b.copy()
 
-                new_b[j],new_b[index]=new_b[j],new_b[index]
+                new_b[j],new_b[index]=new_b[index],new_b[j],
 
                 new_b_str= str(new_b)
 
