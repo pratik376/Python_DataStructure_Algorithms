@@ -28,4 +28,13 @@ class Solution:
 
                   word=q.popleft()
 
+                  if word == endWord:
+                      return res
+
+                  for j in range(len(word)):
+                      pattern= word[j:] + "*" + word[j+1:]
+                      
+                      
+
+
         
