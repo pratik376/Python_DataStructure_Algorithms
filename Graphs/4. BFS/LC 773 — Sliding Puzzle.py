@@ -37,5 +37,12 @@ class Solution:
 
                 new_b[j],new_b[index]=new_b[j],new_b[index]
 
+                new_b_str= str(new_b)
+
+                if not new_b_str in visited:
+                    visited.add(new_b_str)
+                    q.append((j,new_b_str, length+1))
+        return -1
+
 
 
