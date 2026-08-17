@@ -34,7 +34,9 @@ class Solution:
                 if grid[i][j]==1:
                     ones.append(1)
 
-        
+        if len(zeros) == ROWS * COLS or len(ones) == ROWS * COLS:
+            return -1
+
     
 
         while q:
