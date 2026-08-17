@@ -53,9 +53,7 @@ class Solution:
 
                 visited.add((nR,nC))
                 q.append((nR,nC,dist+1))
-
-
-
+                
         return answer
 
 
