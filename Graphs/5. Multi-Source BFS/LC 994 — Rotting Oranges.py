@@ -8,11 +8,10 @@ class Solution:
         directions= [(1,0),(-1,0),(0,1),(0,-1)]
 
         visited= set()
-        answer=-1
+        answer=0
 
         def BFS(q):
-
-        
+            nonlocal answer
 
             while q:
 
