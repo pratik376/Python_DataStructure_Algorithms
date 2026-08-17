@@ -7,6 +7,8 @@ class Solution:
 
         if not grid:
             return -1
+
+        
         visited= set()
         ROWS,COLS= len(grid), len(grid[0])
         directions= [(1,0),(-1,0),(0,1),(0,-1)]
@@ -14,6 +16,17 @@ class Solution:
         q=deque()
 
         answer=-1
+
+        zeros=[]
+        ones=[]
+        
+
+        for i in range(ROWS):
+            for j in range(COLS):
+
+                if grid[i][j]==1:
+                    q.append((i,j,0))
+                    visited.add((i,j))
 
         while q:
             i,j,dist =q.popleft()
@@ -30,12 +43,7 @@ class Solution:
                 visited.add((nR,nC))
                 q.append((nR,nC,dist+1))
 
-        for i in range(ROWS):
-            for j in range(COLS):
 
-                if grid[i][j]==1:
-                    q.append((i,j,0))
-                    visited.add((i,j))
 
         return answer
 
