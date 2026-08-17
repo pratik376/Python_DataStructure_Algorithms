@@ -19,7 +19,8 @@ class Solution:
 
         zeros=[]
         ones=[]
-        
+
+
 
         for i in range(ROWS):
             for j in range(COLS):
@@ -27,6 +28,14 @@ class Solution:
                 if grid[i][j]==1:
                     q.append((i,j,0))
                     visited.add((i,j))
+
+                if grid[i][j]==0:
+                    zeros.append(0)
+                if grid[i][j]==1:
+                    ones.append(1)
+
+        
+    
 
         while q:
             i,j,dist =q.popleft()
