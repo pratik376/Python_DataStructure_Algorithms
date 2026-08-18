@@ -18,7 +18,7 @@ class Solution:
                     col_cnt[j]+=1
 
         result=0
-#fd
+#f
         for i in range(ROWS):
             for j in range(COLS):
 
