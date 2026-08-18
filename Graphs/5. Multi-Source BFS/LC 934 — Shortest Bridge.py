@@ -33,12 +33,17 @@ class Solution:
                     q.append((nR,nC,0))
                     visited.add((nR,nC))
 
-
+        found=False
         for i in range(N):
+
+            if found:
+                break
+
             for j in range(N):
 
-                if grid[i][j]==1 and (i,j) not in visited:
+                if grid[i][j]==1:
                     dfs(i,j)
+                    found=True
                     break
 
 
@@ -56,6 +61,9 @@ class Solution:
                     continue
                 q.append((nR,nC,dist+1))
                 visited.add((nR,nC))
+
+
+        # time and spce O(n2)
 
 
 
