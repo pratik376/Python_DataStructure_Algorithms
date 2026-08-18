@@ -30,7 +30,7 @@ class Solution:
         for i in range(ROWS):
 
             dfs(i,0, pacific, heights[i][0])
-            dfs(i, COLS-1, atlantic, heights[COLS-1][i])
+            dfs(i, COLS-1, atlantic, heights[i][COLS-1])
 
         res= []
 
