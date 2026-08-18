@@ -47,13 +47,15 @@ class Solution:
             i, j, dist= q.popleft()
 
             if (i,j) not in visited and grid[i][j]==1:
-                return dist
+                return dist-1
 
             for r,c in directions:
                 nR,nC= i+r, j+c
 
-                if nR < 0 or nC <0 or nR>=N or nC>=N or (nR,nC) in visited or grid[nR][nC]==0:
+                if nR < 0 or nC <0 or nR>=N or nC>=N or (nR,nC) in visited:
                     continue
+                q.append((nR,nC,dist+1))
+                visited.add((nR,nC))
 
 
 
