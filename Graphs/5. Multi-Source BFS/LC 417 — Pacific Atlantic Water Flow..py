@@ -4,9 +4,53 @@ from typing import List
 class Solution:
     def pacificAtlantic(self, heights: List[List[int]]) -> List[List[int]]:
 
+
+        ROWS, COLS= len(heights), len(heights[0])
+
+        pacific, atlantic= set(), set()
+
+        def dfs(r,c, visited, pre):
+
+            if ( (r,c) in visited or r<0 or c<0 or r==ROWS or c==COLS or heights[r][c]<pre ):
+                return
+
+            visited.add((r,c))
+
+            dfs(r+1,c, visited, heights[r][c])
+            dfs(r-1,c, visited, heights[r][c])
+            dfs(r,c+1, visited, heights[r][c])
+            dfs(r,c-1, visited, heights[r][c])
+
+
+        for i in range(COLS):
+
+            dfs(0,i,pacific, heights[0][i])
+            dfs(ROWS-1, i,heights[ROWS-1][i])
+
+        for i in range(ROWS):
+
+            dfs(i,0, pacific, heights[i][0])
+            dfs(COLS-1, i, atlantic, heights[COLS-1][i])
+
+        res= []
+
+        for r in len(ROWS):
+            for c in len(COLS):
+
+                if (r,c) in pacific and (r,c) in atlantic:
+                    res.append((r,c))
+
+        return res
+
+        
+
+
+
+
+
        
 
-                if h
+        
 
 
         
