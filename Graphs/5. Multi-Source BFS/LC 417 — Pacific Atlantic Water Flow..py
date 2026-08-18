@@ -25,12 +25,12 @@ class Solution:
         for i in range(COLS):
 
             dfs(0,i,pacific, heights[0][i])
-            dfs(ROWS-1, i,heights[ROWS-1][i])
+            dfs(ROWS-1, i,atlantic,heights[ROWS-1][i])
 
         for i in range(ROWS):
 
             dfs(i,0, pacific, heights[i][0])
-            dfs(COLS-1, i, atlantic, heights[COLS-1][i])
+            dfs(i, COLS-1, atlantic, heights[COLS-1][i])
 
         res= []
 
