@@ -49,14 +49,10 @@ class Solution:
 
         while q:
 
-            i, j, dist= q.popleft()
-
-           
+            i, j, dist= q.popleft()           
 
             for r,c in directions:
                 nR,nC= i+r, j+c
-
-                
 
                 if nR < 0 or nC <0 or nR>=N or nC>=N or (nR,nC) in visited:
                     continue
