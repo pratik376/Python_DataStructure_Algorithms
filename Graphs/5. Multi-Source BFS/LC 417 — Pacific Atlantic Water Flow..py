@@ -34,8 +34,8 @@ class Solution:
 
         res= []
 
-        for r in len(ROWS):
-            for c in len(COLS):
+        for r in range(ROWS):
+            for c in range(COLS):
 
                 if (r,c) in pacific and (r,c) in atlantic:
                     res.append((r,c))
