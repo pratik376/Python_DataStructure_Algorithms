@@ -22,21 +22,19 @@ class Solution:
                 for r,c in directions:
 
                     nR,nC= r+i, c+j
-                    
 
+                    if nR<0 or nC<0 or nR>=N or nC>=N or (nR,nC) in visited or isConnected[nR][nC]==0:
+                        continue
 
-
-
-
-
-
+                    visited.add((i,j))
+                    stack.append((i,j))
 
         for i in range(N):
             for j in range(N):
 
                 if isConnected[i][j]==1 and (i,j) not in visited:
 
-                    DFS(i,j)
+                    dfs(i,j)
                     province+=1
 
         return province
