@@ -1,42 +1,47 @@
 from typing import List
+from collections import defaultdict
 
 
 class Solution:
     def findCircleNum(self, isConnected: List[List[int]]) -> int:
 
-
-        N= len(isConnected)
-        directions= [(1,0),(-1,0),(0,1),(0,-1)]
-        visited=set()
-        province=0
-
-        def dfs(i,j):
-
-            stack=[(i,j)]
-            visited.add((i,j))
-
-            while stack:
-
-                i, j = stack.pop()
-
-                for r,c in directions:
-
-                    nR,nC= r+i, c+j
-
-                    if nR<0 or nC<0 or nR>=N or nC>=N or (nR,nC) in visited or isConnected[nR][nC]==0:
-                        continue
-
-                    visited.add((i,j))
-                    stack.append((i,j))
+        N = len(isConnected)
+        adjency = defaultdict(list)
 
         for i in range(N):
             for j in range(N):
 
-                if isConnected[i][j]==1 and (i,j) not in visited:
+                if i == j:
+                    continue
 
-                    dfs(i,j)
-                    province+=1
-
-        return province
+                if isConnected[i][j] == 1:
+                    adjency[i].append(j)
 
         
+
+        visited= set()
+        answer=0
+
+        def dfs(node):
+
+            stack=[node]
+            visited.add(node)
+
+            while stack:
+
+                node = stack.pop()
+
+                for nei in adjency[node]:
+
+                    if nei not in visited:
+                        stack.append(nei)
+                        visited.add(nei)
+
+        for key in adjency.keys():
+
+            if not key in visited:
+                dfs(key)
+                answer+=1
+
+        return answer
+
