@@ -14,8 +14,6 @@ class Solution:
             adj[b].append([a, 1/values[i]])
 
 
-        
-
         def bfs(src, dest):
 
             if src not in adj or dest not in adj:
@@ -37,7 +35,7 @@ class Solution:
 
                     if nei not in visited:
                         visited.add(nei[0])
-                        q.append((nei, adj[nei][1] * val))
+                        q.append((nei, nei[1] * val))
 
             return -1
     
