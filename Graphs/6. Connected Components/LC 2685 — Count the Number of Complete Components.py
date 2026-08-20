@@ -17,16 +17,10 @@ class Solution:
             edge_count[a]+=1
             edge_count[b]+=1
 
-
-        for i in range(n):
-
-            if i not in adj:
-                adj[i].append([])
-                edge_count[i]+=1
-
         def dfs(i):
 
             total_node=0
+            total_edge=0
             stack=[i]
             visited.add(i)
 
@@ -37,20 +31,22 @@ class Solution:
                 for nei in adj[node]:
 
                     if nei not in visited:
+                        
                         visited.add(nei)
                         stack.append(nei)
+                    total_edge+=1
+                    
 
-            return total_node
-
-
+            return total_node,total_edge //2
         answer=0
         
         for i in range(n):
 
             if i not in visited:
-                total_node=dfs(i)
+                total_node,total_edge=dfs(i)
+                final_edge=  (total_node) * (total_node-1) /2
 
-                if edge_count[i] == total_node-1:
+                if total_edge ==final_edge :
                     answer+=1
 
         return answer
