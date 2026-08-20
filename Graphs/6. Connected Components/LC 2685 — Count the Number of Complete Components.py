@@ -36,7 +36,6 @@ class Solution:
                         stack.append(nei)
                     total_edge+=1
                     
-
             return total_node,total_edge //2
         answer=0
         
