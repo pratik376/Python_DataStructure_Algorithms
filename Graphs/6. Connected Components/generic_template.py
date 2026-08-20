@@ -22,3 +22,11 @@ def dfs(node):
             if nei not in visited:
                 visited.add(nei)
                 stack.append(nei)
+
+# Graph given as adjacency list / edge list
+# → Time usually O(V + E)
+# → Space usually O(V + E) if you build/store adjacency list
+
+# Grid of m × n cells
+# → Time usually O(mn)
+# → Space usually O(mn) worst case
