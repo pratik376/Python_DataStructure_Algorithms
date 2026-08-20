@@ -14,6 +14,7 @@ class Solution:
         visited= set()
 
         stack=[(0,-1)]
+        visited.add(0)
 
         while stack:
 
@@ -23,6 +24,7 @@ class Solution:
 
                 if nei not in visited:
                     stack.append((nei,node))
+                    visited.add(nei)
 
                 elif nei != parent:
                     return False
