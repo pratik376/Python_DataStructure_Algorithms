@@ -14,14 +14,15 @@ class Solution:
             adj[b].append([a, 1/values[i]])
 
 
-        visited=set()
+        
 
         def bfs(src, dest):
 
             if src not in adj or dest not in adj:
                 return -1
 
-            q=deque((src, adj[src]))
+            q=deque((src, 1))
+            visited=set()
 
             visited.add(src)
             result=1
@@ -29,20 +30,20 @@ class Solution:
             while q:
                 node, val =q.popleft()
 
-                result*=val
-
                 if node==dest:
-                    return result
+                    return val
 
                 for nei in adj[src]:
 
                     if nei not in visited:
                         visited.add(nei)
-                        q.append((nei, adj[nei]))
+                        q.append((nei, adj[nei][1] * val))
 
         answer=[]
         for qx,qy in queries:
             answer.append(bfs(qx,qy))
+
+        return answer
 
 
         
