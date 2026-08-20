@@ -1,5 +1,31 @@
 from typing import List
+from collections import defaultdict
 
 class Solution:
     def validTree(self, n: int, edges: List[List[int]]) -> bool:
-        pass
+
+
+        adj=defaultdict(list)
+
+        for a,b in edges:
+            adj[a].append(b)
+            adj[b].append(a)
+
+        visited= set()
+
+        stack=[(0,-1)]
+
+        while stack:
+
+            node, parent= stack.pop()
+
+            for nei in adj[node]:
+
+                if nei not in visited:
+                    stack.append((nei,node))
+
+                elif nei != parent:
+                    return False
+
+
+        return True if len(visited)==n else False
