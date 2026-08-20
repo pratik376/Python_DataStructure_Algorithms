@@ -33,11 +33,14 @@ class Solution:
                 if node==dest:
                     return val
 
-                for nei in adj[src]:
+                for nei in adj[node]:
 
                     if nei not in visited:
-                        visited.add(nei)
+                        visited.add(nei[0])
                         q.append((nei, adj[nei][1] * val))
+
+            return -1
+    
 
         answer=[]
         for qx,qy in queries:
