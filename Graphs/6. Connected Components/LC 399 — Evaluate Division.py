@@ -19,7 +19,7 @@ class Solution:
             if src not in adj or dest not in adj:
                 return -1
 
-            q=deque((src, 1))
+            q=deque([(src, 1)])
             visited=set()
 
             visited.add(src)
@@ -31,11 +31,11 @@ class Solution:
                 if node==dest:
                     return val
 
-                for nei in adj[node]:
+                for nei,weight in adj[node]:
 
                     if nei not in visited:
-                        visited.add(nei[0])
-                        q.append((nei, nei[1] * val))
+                        visited.add(nei)
+                        q.append((nei, weight* val))
 
             return -1
     
