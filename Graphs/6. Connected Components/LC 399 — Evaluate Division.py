@@ -25,7 +25,7 @@ class Solution:
             visited=set()
 
             visited.add(src)
-            result=1
+          
 
             while q:
                 node, val =q.popleft()
