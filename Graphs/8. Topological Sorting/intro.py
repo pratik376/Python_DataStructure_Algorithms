@@ -14,23 +14,14 @@ class Solution:
 
 
         def dfs(i):
-
-            stack=[i]
             visited.add(i)
 
-            while stack:
-                node=stack.pop()
-
-                for nei in adj[node]:
-
-                    if nei not in visited:
-                        dfs(nei)
+            for nei in adj[i]:
+                dfs(i)
 
             answer_stack.append(i)
 
-   
-            
-  
+           
         for i in range(n):
 
             if i not in visited:
