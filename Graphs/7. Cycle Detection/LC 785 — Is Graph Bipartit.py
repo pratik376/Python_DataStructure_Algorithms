@@ -8,25 +8,35 @@ class Solution:
         status={}
 
 
-        stack=[(0)]
-        status[0]="A"
 
-        visited.add(0)
 
-        while stack:
+        def dfs(node):
+            stack=[node]
+            status[node]="A"
+            visited.add(0)
+            while stack:
 
-            node=stack.pop()
+                node=stack.pop()
 
-            for nei in graph[node]:
+                for nei in graph[node]:
 
-                if nei not in visited:
+                    if nei not in visited:
 
-                    if status=="A":
-                        status[nei]="B"
-                    else:
-                        status[nei]="A"
+                        if status[node]=="A":
+                            status[nei]="B"
+                        else:
+                            status[nei]="A"
 
-                elif status[node]==
+                        stack.append(nei)
+                        visited.add(nei)
+                    elif status[node]==status[nei]:
+                        return False
+
+        for i in range(len(graph)):
+            if i not in visited:
+                if not dfs(i):
+                    return False
+        return True
                       
 
                 
