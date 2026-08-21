@@ -26,7 +26,7 @@ class Solution:
 
                 for nei in adj[node]:
 
-                    if nei not in visited and degrees[nei]>1:
+                    if degrees[nei]>1:
                         degrees[nei]-=1
                     else:
                         degrees[nei]=0
