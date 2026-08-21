@@ -19,23 +19,26 @@ class Solution:
 
         def bfs(q):
 
-            node=q.popleft()
-            visited.add(node)
-            answer.append(node)
+            while q:
 
-            for nei in adj[node]:
+                node=q.popleft()
+                visited.add(node)
+                answer.append(node)
 
-                if nei not in visited and degrees[nei]:
-                    degrees[nei]-=1
-                else:
-                    q.append(nei)
+                for nei in adj[node]:
+
+                    if nei not in visited and degrees[nei]>1:
+                        degrees[nei]-=1
+                    else:
+                        q.append(nei)
 
         for i in range(n):
 
             if degrees[i]==0:
                 q.append(i)
 
-        bfs(q)
+        
+
 
         return answer
 
