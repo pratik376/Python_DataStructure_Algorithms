@@ -30,4 +30,4 @@ class Solution:
                     return False
 
 
-        return True if len(visited)==n else False
+        return len(visited)==n 
