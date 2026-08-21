@@ -26,10 +26,9 @@ class Solution:
 
                 for nei in adj[node]:
 
-                    if degrees[nei]>1:
-                        degrees[nei]-=1
-                    else:
-                        degrees[nei]=0
+                    degrees[nei]-=1
+
+                    if not degrees[nei]:
                         q.append(nei)
 
         for i in range(n):
