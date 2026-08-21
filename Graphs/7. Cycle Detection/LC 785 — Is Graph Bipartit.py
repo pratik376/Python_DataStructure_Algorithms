@@ -5,32 +5,24 @@ class Solution:
     def isBipartite(self, graph: List[List[int]]) -> bool:
 
         visited=set()
-        status={}
-        status_A,status_B= "A","B"
+       
 
 
-        for node, neighbours in enumerate(graph):
+        stack=[(0,"A")]
 
-            if node not in visited:
-                status[node]="A"
-                visited.add(node)
+        visited.add(0)
 
-            for nei in neighbours:   
+        while stack:
+
+            node, status =stack.pop()
+
+            for nei in graph[node]:
 
                 if nei not in visited:
+                    
 
-                    if status[node]=="A":
-                        status[nei]="B"
-                       
-                    else:
-                        status[nei]="A"
-
-                    visited.add(nei)
-
-                elif status[node] == status[nei]:
-                    return False
-
-        return True
+        
+        
 
 
 
