@@ -13,7 +13,7 @@ class Solution:
         def dfs(node):
             stack=[node]
             status[node]="A"
-            visited.add(0)
+            visited.add(node)
             while stack:
 
                 node=stack.pop()
@@ -31,6 +31,7 @@ class Solution:
                         visited.add(nei)
                     elif status[node]==status[nei]:
                         return False
+            return True
 
         for i in range(len(graph)):
             if i not in visited:
