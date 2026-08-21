@@ -39,5 +39,5 @@ class Solution:
         bfs(q)
         
 
-        return len(answer)==n
+        return answer if len(answer)==n else []
 
