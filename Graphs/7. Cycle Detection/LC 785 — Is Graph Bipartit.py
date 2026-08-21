@@ -15,9 +15,7 @@ class Solution:
                 status[node]="A"
                 visited.add(node)
 
-            for nei in neighbours:
-
-                
+            for nei in neighbours:   
 
                 if nei not in visited:
 
