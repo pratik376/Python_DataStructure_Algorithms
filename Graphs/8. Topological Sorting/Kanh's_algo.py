@@ -1,5 +1,41 @@
 from typing import List
+from collections import deque,defaultdict
 
 class Solution:
     def topologicalSort(self, n: int, edges: List[List[int]]) -> List[int]:
-        pass
+
+        adj=defaultdict(list)
+        degrees=defaultdict(int)
+        answer=[]
+
+        for  a, b in edges:
+            adj[a].append(b)
+            degrees[b]+=1
+
+
+
+        q=deque()
+        visited= set()
+
+        def bfs(q):
+
+            node=q.popleft()
+            visited.add(node)
+            answer.append(node)
+
+            for nei in adj[node]:
+
+                if nei not in visited and degrees[nei]:
+                    degrees[nei]-=1
+                else:
+                    q.append(nei)
+
+        for i in range(n):
+
+            if degrees[i]==0:
+                q.append(i)
+
+        bfs(q)
+
+        return answer
+
