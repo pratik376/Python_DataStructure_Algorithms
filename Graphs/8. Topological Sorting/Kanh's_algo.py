@@ -20,7 +20,6 @@ class Solution:
         def bfs(q):
 
             while q:
-
                 node=q.popleft()
                 visited.add(node)
                 answer.append(node)
@@ -30,6 +29,7 @@ class Solution:
                     if nei not in visited and degrees[nei]>1:
                         degrees[nei]-=1
                     else:
+                        degrees[nei]=0
                         q.append(nei)
 
         for i in range(n):
@@ -37,8 +37,8 @@ class Solution:
             if degrees[i]==0:
                 q.append(i)
 
+        bfs(q)
         
 
-
-        return answer
+        return len(answer)==n
 
