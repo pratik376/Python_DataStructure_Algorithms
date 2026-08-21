@@ -17,7 +17,9 @@ class Solution:
             visited.add(i)
 
             for nei in adj[i]:
-                dfs(i)
+
+                if nei not in visited:
+                    dfs(i)
 
             answer_stack.append(i)
 
