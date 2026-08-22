@@ -19,6 +19,7 @@ class Solution:
         min_sem=0
 
         def bfs(q):
+            nonlocal min_sem
 
             while q:
 
