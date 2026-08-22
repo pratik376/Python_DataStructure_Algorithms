@@ -24,7 +24,7 @@ class Solution:
 
                course, semester =q.popleft()
                answer.append(course)
-               max_sem=max(max_sem,semester)
+               min_sem=max(min_sem,semester)
 
                for nei in adj[course]:
 
@@ -34,7 +34,7 @@ class Solution:
 
                        q.append((nei, semester+1))
                  
-        for i in range(n):
+        for i in range(1,n+1):
             if degree[i]==0:
                 q.append((i,1))
 
