@@ -10,7 +10,7 @@ class Solution:
         indegree=defaultdict(int)
         answer=[]
         recipes_set=set(recipes)
-        supplies= set(supplies)
+    
 
 
         for i in range(len(recipes)):
