@@ -13,22 +13,6 @@ class Solution:
         answer_stack=[]
 
         def dfs(i):
-
-            stack=[i]
-            visited.add(i)
-
-            while stack:
-
-                i= stack.pop()
-
-                for nei in adj[i]:
-
-                    if nei not in visited:
-                        visited.add(nei)
-                        
-
-
-        def dfs(i):
             visited.add(i)
 
             for nei in adj[i]:
