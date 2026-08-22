@@ -4,7 +4,8 @@ from collections import defaultdict, deque
 class Solution:
     def findAllRecipes(self, recipes: List[str], ingredients: List[List[str]], supplies: List[str]) -> List[str]:
 
-        q=deque()
+        q=deque(supplies)
+        
         adj= defaultdict(list)
         indegree=defaultdict(int)
         answer=[]
@@ -20,34 +21,23 @@ class Solution:
 
                 indegree[recipes[i]]+=1
 
-
-        for recipe in recipes:
-
-            if indegree[recipe]==0:
-                q.append(recipe)
-
-
+    
         def bfs(q):
             nonlocal answer
 
             while q:
 
-                recipe=q.popleft()
+                ingredient=q.popleft()
 
-                if recipe in recipes:
-                    answer.append(recipe)
+                if ingredient in recipes_set:
+                    answer.append(ingredient)
 
-                for ingredient in adj[recipe]:
+                for nei in adj[ingredient]:
+                    indegree[nei]-=1
 
-                    if ingredient in supplies:
-
-                        indegree[ingredient]-=1
-
-                        if indegree[ingredient]==0:
-                            q.append(ingredient)
-                    else:
-                        answer.pop() # if ingrdient is not in supplies we can't make that recipie 
-                        break
+                    if indegree[nei]==0:
+                        q.append(nei)
+                
 
         bfs(q)
 
