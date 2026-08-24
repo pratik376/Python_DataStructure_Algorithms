@@ -25,6 +25,7 @@ class Solution:
             for nei in adj[node]:
 
                 dfs(nei,path,color_count)
+        
 
             visited.add(node)
 
@@ -32,10 +33,14 @@ class Solution:
 
         for  i in range(len(edges)):
 
-            if i not in visited and not isCycle:
-                color_count= defaultdict(int)
-                dfs(i, set(), color_count)
-                answer= max(answer, max(color_count.values))
+            if i not in visited:
+
+                if not isCycle:
+                    color_count= defaultdict(int)
+                    dfs(i, set(), color_count)
+                    answer= max(answer, max(color_count.values))
+                else:
+                    return -1
 
         return answer
                 
