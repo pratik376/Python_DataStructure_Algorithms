@@ -143,7 +143,7 @@ class Solution:
 
 
 
-# correct / neetcode solution
+# correct / neetcode solutionLC 2392 — Build a Matrix With Conditions
 from typing import List
 from collections import defaultdict
 
