@@ -40,14 +40,16 @@ class Solution:
                 parents[p1]=parents[p2]
                 rank[p2]+= rank[p1]
 
-            return False
+         
 
         for a,b in similarPairs:
             union(a,b)
 
         for a1,a2 in zip(sentence1,sentence2):
 
-            if not union(a1,a2):
+
+
+            if find(a1) !=find(a2):
                 return False
 
         return True
