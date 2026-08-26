@@ -47,7 +47,11 @@ class Solution:
 
         for a1,a2 in zip(sentence1,sentence2):
 
+            if a1==a2:
+                continue
 
+            if a1 not in parents or a2 not in parents:
+                return False
 
             if find(a1) !=find(a2):
                 return False
