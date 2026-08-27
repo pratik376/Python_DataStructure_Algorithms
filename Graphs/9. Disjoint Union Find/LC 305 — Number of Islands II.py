@@ -5,5 +5,7 @@ class Solution:
 
         parents= [i for i in range(m*n)]
         rank= [1] * (m *n)
+        parents= [-1] * (m *n)
         
+
 
