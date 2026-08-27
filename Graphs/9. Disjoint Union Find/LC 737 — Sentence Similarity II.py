@@ -40,12 +40,10 @@ class Solution:
                 parents[p1]=parents[p2]
                 rank[p2]+= rank[p1]
 
-         
-
-        for a,b in similarPairs:
+        for a,b in similarPairs: # 
             union(a,b)
 
-        for a1,a2 in zip(sentence1,sentence2):
+        for a1,a2 in zip(sentence1,sentence2): # number in sentences
 
             if a1==a2:
                 continue
