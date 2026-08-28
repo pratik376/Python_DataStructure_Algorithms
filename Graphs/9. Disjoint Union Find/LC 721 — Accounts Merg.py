@@ -1,5 +1,5 @@
 from typing import List
-
+from collections import defaultdict
 class UnionFind:
     def __init__(self, n):
         self.par = [i for i in range(n)]
@@ -27,7 +27,38 @@ class Solution:
     def accountsMerge(self, accounts: List[List[str]]) -> List[List[str]]:
 
         uf=UnionFind(len(accounts))
-        emailToacc= {}
+        emailToacc= {} # email-> index of an account
+
+        for i, a in enumerate(accounts):
+
+            for e in a[1:]:
+
+                if e in emailToacc:
+                   uf.union(i,emailToacc[e])
+
+                else:
+                    emailToacc[e]=i
+
+        emailGroup= defaultdict(list)  # index of acc -> list of emails
+
+        for e, i in emailToacc.items():
+
+            leader= uf.find(i)
+            emailGroup[leader].append(e)
+
+        res=[]
+
+        for i, emails in emailGroup.items():
+
+            name= accounts[i][0]
+            res.append([name] + sorted(emailGroup[i]))
+
+        return res
+
+
+        
+
+
         
 
 
