@@ -18,15 +18,28 @@ class Solution:
             edgeList[a].append((b,weight))
             edgeList[b].append((a,weight))
 
-
         def bfs():
+            nonlocal answer
 
             while q:
                 node, w=q.popleft()
+                answer= min(answer,weight)
 
-                answer=min(answer,w)
 
                 for nei,weight in edgeList[node]:
+            
+                    answer= min(answer,weight)
+                    if nei not in visited:
+                        visited.add(nei)
+                        q.append((nei,weight))
+            
+
+            
+
+        bfs()
+
+        return answer
+                    
 
 
                 
