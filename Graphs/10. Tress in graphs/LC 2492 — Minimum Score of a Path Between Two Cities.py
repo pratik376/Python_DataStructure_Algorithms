@@ -33,9 +33,6 @@ class Solution:
                         visited.add(nei)
                         q.append((nei,weight))
             
-
-            
-
         bfs()
 
         return answer
