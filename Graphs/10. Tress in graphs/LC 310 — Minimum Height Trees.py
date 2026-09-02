@@ -28,10 +28,12 @@ class Solution:
             if n<=2:
                 return list(leaves)
 
-            node=leaves.popleft()
-            n-=1
-            for nei in adj[node]:
-                edge_count[nei] -=1
+            for i in range(len(leaves)):
 
-                if edge_count[nei]==1:
-                    leaves.append(nei)
+                node=leaves.popleft()
+                n-=1
+                for nei in adj[node]:
+                    edge_count[nei] -=1
+
+                    if edge_count[nei]==1:
+                        leaves.append(nei)
