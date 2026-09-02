@@ -1,5 +1,6 @@
 from typing import List
 from collections import defaultdict
+import heapq
 class Solution:
     def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:
 
@@ -7,28 +8,31 @@ class Solution:
         adj= defaultdict(list)
 
         for a,b, w in times:
-            adj[b].append((b,w))
+            adj[a].append((b,w))
 
         answer=0
         visited= set()
+        min_Heap=[ (0,k)]
 
-        def dfs(node,time):
+        while min_Heap:
 
-            stack=[node]
+            w1, node= heapq.heappop(min_Heap)
+
+            if node in visited:
+                continue
+
+            answer= max(answer,w1)
+
             visited.add(node)
 
-            while stack:
-                node, time =stack.pop()
+            for n2,w2 in adj[node]:
 
-                answer= max(answer,time)
+                if n2 not in visited:
+                    heapq.heappush(min_Heap, (w1+w2,n2))
 
-                for nei, nei_time in adj[node]:
+        return -1 if len(visited)!=n else answer
 
-                    if nei not in visited:
-                        visited.add(nei)
-                        stack.append((nei,nei_time ))
-
-            return answer
+    
 
 
 
