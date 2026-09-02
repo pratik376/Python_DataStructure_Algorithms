@@ -34,9 +34,9 @@ class Solution:
 
                 if (Nr,Nc) not in visited:
 
-                    diff=max(diff, abs(heights[r][c]- heights[Nr][Nc]))
+                    new_diff=max(diff, abs(heights[r][c]- heights[Nr][Nc]))
 
-                    heapq.heappush(minHeap, (diff,Nr,Nc))
+                    heapq.heappush(minHeap, (new_diff,Nr,Nc))
 
             
 
