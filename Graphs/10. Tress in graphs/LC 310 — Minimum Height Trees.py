@@ -1,39 +1,78 @@
-from collections import defaultdict, deque
 from typing import List
+from collections import defaultdict, deque
+
 
 class Solution:
-    def findMinHeightTrees(self, n: int, edges: List[List[int]]) -> List[int]:
+    def minimumDiameterAfterMerge(
+        self,
+        edges1: List[List[int]],
+        edges2: List[List[int]]
+    ) -> int:
 
-        if n==1:
-            return [0]
+        def findDiameter(edges):
 
-        adj= defaultdict(list)
+            n = len(edges) + 1
 
-        for n1,n2 in edges:
-            adj[n1].append(n2)
-            adj[n2].append(n1)
+            if n == 1:
+                return 0
 
-        edge_count={}
-        leaves= deque()
+            adj = defaultdict(list)
 
-        for src, neighbours in adj.items():
+            for n1, n2 in edges:
+                adj[n1].append(n2)
+                adj[n2].append(n1)
 
-            if len(neighbours)==1:
-                leaves.append(src)
+            edge_count = {}
+            leaves = deque()
 
-            edge_count[src]= len(neighbours)
+            for src, neighbours in adj.items():
 
-        while leaves:
+                edge_count[src] = len(neighbours)
 
-            if n<=2:
-                return list(leaves)
+                if len(neighbours) == 1:
+                    leaves.append(src)
 
-            for i in range(len(leaves)):
+            layers = 0
 
-                node=leaves.popleft()
-                n-=1
-                for nei in adj[node]:
-                    edge_count[nei] -=1
+            while leaves:
 
-                    if edge_count[nei]==1:
-                        leaves.append(nei)
+                if n <= 2:
+                    break
+
+                for _ in range(len(leaves)):
+
+                    node = leaves.popleft()
+                    n -= 1
+
+                    for nei in adj[node]:
+
+                        edge_count[nei] -= 1
+
+                        if edge_count[nei] == 1:
+                            leaves.append(nei)
+
+                layers += 1
+
+            # One center remaining
+            if n == 1:
+                diameter = layers * 2
+
+            # Two centers remaining
+            else:
+                diameter = layers * 2 + 1
+
+            return diameter
+
+        diameter1 = findDiameter(edges1)
+        diameter2 = findDiameter(edges2)
+
+        radius1 = (diameter1 + 1) // 2
+        radius2 = (diameter2 + 1) // 2
+
+        cross_diameter = radius1 + 1 + radius2
+
+        return max(
+            diameter1,
+            diameter2,
+            cross_diameter
+        )
