@@ -31,8 +31,7 @@ class Solution:
 
                 if R< 0 or R==ROWS or C<0 or C==COLS or (R,C) in visited:
                     continue
-                
-                
+            
                 heapq.heappush(maxheap, (-min(val, grid[R][C]), R,C))
 
 
