@@ -8,34 +8,35 @@ class Solution:
 
         directions= [(1,0),(-1,0),(0,1),(0,-1)]
 
-        visited=set()
-        answer=0
+        visited=set()  # space (M+N)
 
-        minHeap= [(heights[0][0], 0, 0)]
+        minHeap= [(0, 0, 0)] #   (M+N) * log(M+N)
 
         while minHeap:
 
-            element, r,c = heapq.heappop(minHeap)
+            diff, r,c = heapq.heappop(minHeap)
 
             if (r,c) in visited:
                 continue
 
             visited.add((r,c))
-            answer = max(answer,element)
+       
 
             if r==ROWS-1 and c==COLS-1:
-                return answer
+                return diff
 
             for nr,nc in directions:
 
                 Nr,Nc= r+nr, c+nc
 
-                if Nr < 0 or Nc < 0 or Nr>=ROWS or Nc>=COLS:
+                if Nr < 0 or Nc < 0 or Nr>=ROWS or Nc>=COLS or (Nr,Nc) in visited:
                     continue
 
                 if (Nr,Nc) not in visited:
 
-                    heapq.heappush(minHeap, (abs(element- heights[Nr][Nr]),Nr,Nc))
+                    diff=max(diff, abs(heights[r][c]- heights[Nr][Nc]))
+
+                    heapq.heappush(minHeap, (diff,Nr,Nc))
 
             
 
