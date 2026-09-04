@@ -22,7 +22,7 @@ class Solution:
 
         heap= [(0,0)] # cost, node
 
-ssdasddas
+ssdasdda
         while heap:
 
             cost, node =heapq.heappop(heap)
