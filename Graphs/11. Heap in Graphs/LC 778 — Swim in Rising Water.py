@@ -18,16 +18,14 @@ class Solution:
         while heap:
 
             t, i, j =heapq.heappop(heap)
-
-            if (i,j) == (ROWS-1, COLS-1):
-                return t
-
             if (i,j) in visited:
                 continue
 
             visited.add((i,j))
 
-        
+            if (i,j) == (ROWS-1, COLS-1):
+                return t
+            
             for nr,nc in directions:
 
                 nr,nc= nr+i, nc+j
