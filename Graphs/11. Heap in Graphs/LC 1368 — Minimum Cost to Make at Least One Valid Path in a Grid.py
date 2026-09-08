@@ -18,11 +18,11 @@ class Solution:
 
             if (i,j) in visited:
                 continue
-
+            visited.add((i,j))
             if (i,j)==(ROWS-1,COLS-1):
                 return cost
 
-            visited.add((i,j))
+            
 
             for r,c in directions:
 
