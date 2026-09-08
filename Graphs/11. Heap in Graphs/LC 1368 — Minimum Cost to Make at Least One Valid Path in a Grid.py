@@ -8,11 +8,11 @@ class Solution:
         visited=set()
 
 
-        heap=[(0,(0,0))] # cost, cordinates 
+        heap=[(0,0,0)] # cost, cordinates 
     
 
 
-        while heapq:
+        while heap:
 
             cost, i, j=heapq.heappop(heap)
 
@@ -31,11 +31,11 @@ class Solution:
                 if nr < 0 or nc <0 or nc >=COLS or nr >=ROWS or (nr,nc) in visited:
                     continue
 
-                if ((r,c)==(1,0) and grid[nr][nc]==3) or ((r,c)==(0,1) and grid[nr][nc]==1) or ((r,c)==(-1,0) and grid[nr][nc]==4) or ((r,c)==(0,-1) and grid[nr][nc]==2):
-                    heapq.heappush(heap,(cost,(nr,nc)))
+                if ((r,c)==(1,0) and grid[i][j]==3) or ((r,c)==(0,1) and grid[i][j]==1) or ((r,c)==(-1,0) and grid[i][j]==4) or ((r,c)==(0,-1) and grid[i][j]==2):
+                    heapq.heappush(heap,(cost,nr,nc))
                 else:
-                    heapq.heappush(heap, (cost+1, (nr,nc)))
-                    
+                    heapq.heappush(heap, (cost+1, nr,nc))
+
                 
 
 
