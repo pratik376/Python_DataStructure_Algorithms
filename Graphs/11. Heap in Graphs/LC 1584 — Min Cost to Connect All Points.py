@@ -31,6 +31,7 @@ class Solution:
             if node in visit:
                 continue
             res+=cost
+            visit.add(node)
 
             for neiCost, nei in adj[node]:
 
