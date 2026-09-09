@@ -52,7 +52,7 @@ class Solution:
             for r2,c2 in neighbour:
 
                 if  in_bound(r2,c2) and (r2,c2) not in visited:
-                    dist2= min(dist, grid[r2][c2])
+                    dist2= min(dist, min_dist[(r2,c2)])
                     heapq.heappush(maxHeap, (-dist2, r2,c2))
 
 
