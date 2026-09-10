@@ -10,22 +10,22 @@ class Solution:
         visited=set()
         directions=[(1,0),(-1,0),(0,1),(0,-1)]
 
-        stack=[start]
-        visited.add(start)
+        stack=[tuple(start)]
+        visited.add(tuple(start))
 
 
         while stack:
 
             r,c=stack.pop()
 
-            if (r,c)==destination:
+            if (r,c)==tuple(destination):
                 return True
 
             for R,C in directions:
 
                 nr,nc= r,c
 
-                while (0<= nr+R <ROWS and 0<= nc+C <COLS and maze[nr+R][nc+C]==1):
+                while (0<= nr+R <ROWS and 0<= nc+C <COLS and maze[nr+R][nc+C]==0):
                     nr+=R
                     nc+=C
 
