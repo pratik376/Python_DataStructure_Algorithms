@@ -29,7 +29,7 @@ class Solution:
                     nr+=R
                     nc+=C
 
-                if ((nr,nc)) not in visited and 0<= nr+R <ROWS and 0<= nc+C <COLS:
+                if ((nr,nc)) not in visited:
                     visited.add((nr,nc))
                     stack.append((nr,nc))
 
