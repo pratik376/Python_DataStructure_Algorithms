@@ -11,12 +11,10 @@ class Solution:
         for i in range(n-1):
             adj[i].append(i+1)
 
-
-
         def bfs():
 
             visited= set()
-            q=deque((0,0)) # node, steps
+            q=deque([0,0]) # node, steps_cost
             visited.add(0)
 
 
