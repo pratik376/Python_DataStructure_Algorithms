@@ -17,6 +17,7 @@ class Solution:
 
             visited= set()
             q=deque((0,0)) # node, steps
+            visited.add(0)
 
 
             while q:
@@ -30,7 +31,7 @@ class Solution:
 
                     if nei not in visited:
                         q.append((nei,cost+1))
-                        visited.add((nei))
+                        visited.add(nei)
 
         for index, val in enumerate(queries):
             a,b= val
