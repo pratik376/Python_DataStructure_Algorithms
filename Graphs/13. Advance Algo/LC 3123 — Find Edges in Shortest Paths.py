@@ -12,11 +12,10 @@ class Solution:
             adj[a].append((b, w))
             adj[b].append((a, w))
 
-
         def dijkstra(src):
 
             dist = [float("inf")] * n
-            dist[src] = 0
+            visited = set()
 
             heap = [(0, src)]
 
@@ -24,17 +23,21 @@ class Solution:
 
                 cost, node = heapq.heappop(heap)
 
-                if cost > dist[node]:
+                if node in visited:
                     continue
+
+                visited.add(node)
+
+                dist[node] = cost
 
                 for nei, w in adj[node]:
 
-                    new_cost = cost + w
+                    if nei not in visited:
 
-                    if new_cost < dist[nei]:
-
-                        dist[nei] = new_cost
-                        heapq.heappush(heap, (new_cost, nei))
+                        heapq.heappush(
+                            heap,
+                            (cost + w, nei)
+                        )
 
             return dist
 
