@@ -46,7 +46,19 @@ class Solution:
                 component_cost[root] &=w
 
         res=[]
-        
+
+        for src,dst in query:
+
+            r1,r2 = uf.find(src), uf.find(dst)
+
+            if r1!=r2:
+                res.append(-1)
+
+            else:
+                res.append(component_cost[r1])
+
+        return res
+
 
 
 
