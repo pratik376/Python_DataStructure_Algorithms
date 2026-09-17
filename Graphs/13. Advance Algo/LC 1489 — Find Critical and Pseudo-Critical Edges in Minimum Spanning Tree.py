@@ -42,4 +42,34 @@ class Solution:
             if uf.union(v1,v2):
                 mast_weight+=w
 
+        critical, pseudo=[],[]
+
+        for n1,n2, e_weight, i in edges:
+
+            wight=0
+            uf=UnionFind(n)
+
+            for v1,v2 , w, j in edges:
+                if i!=j and uf.union(v1, v2):
+                    wight+=w
+
+            if max(uf.rank) !=n or wight> mast_weight:
+                critical.append(i)
+                continue
+
+
+            uf=UnionFind(n)
+            uf.union(n1,n2)
+            weight= e_weight
+            for v1,v2, w, j in edges:
+
+                if uf.union(v1,v2):
+                    weight+=w
+
+                if weight == mast_weight:
+                    pseudo.append(i)
+
+            return [critical,pseudo]
+
+
         
