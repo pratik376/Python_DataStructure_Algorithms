@@ -12,7 +12,7 @@ class Solution:
         def dfs(i, Nor):
             nonlocal count
 
-            if i == len(nums):
+            if i >=len(nums):
                 if Nor == max_OR:
                     count += 1
               

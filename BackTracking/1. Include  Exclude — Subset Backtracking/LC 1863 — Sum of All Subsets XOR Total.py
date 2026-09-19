@@ -6,7 +6,7 @@ class Solution:
 
         def dfs(i,xor):
 
-            if i ==len(nums):
+            if i>=len(nums):
                 return xor
 
             # add
