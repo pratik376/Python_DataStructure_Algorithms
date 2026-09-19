@@ -13,11 +13,9 @@ class Solution:
             nonlocal count
 
             if i == len(nums):
-                return
-
-            if i < len(nums) and Nor == max_OR:
-                count += 1
-
+                if Nor == max_OR:
+                    count += 1
+              
             # add
 
             dfs(i + 1, Nor | nums[i])
