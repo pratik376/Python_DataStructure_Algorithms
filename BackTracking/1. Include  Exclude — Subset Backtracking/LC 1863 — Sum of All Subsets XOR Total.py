@@ -6,16 +6,13 @@ class Solution:
 
         def dfs(i,xor):
 
-            if i >len(nums):
+            if i ==len(nums)-1:
                 return xor
 
-
             # add
-            
-        
-            dfs(i+1, nums[i] * xor)
-
-            # remove
+            # what i was about to do xor+= xor ^ nums[i]
+            dfs(i+1, nums[i] ^ xor)
+            # remove  xor-= xor ^ nums[i]
             dfs(i+1, xor)
 
         return dfs(0,0)
