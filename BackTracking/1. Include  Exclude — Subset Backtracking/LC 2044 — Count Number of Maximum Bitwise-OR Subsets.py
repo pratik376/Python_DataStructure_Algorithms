@@ -13,9 +13,11 @@ class Solution:
 
         def dfs(i, Nor):
 
+            if i> len(nums):
+                return
+
             if i < len(nums) and Nor==max_OR:
                 count+=1
-                return
 
             #add
 
