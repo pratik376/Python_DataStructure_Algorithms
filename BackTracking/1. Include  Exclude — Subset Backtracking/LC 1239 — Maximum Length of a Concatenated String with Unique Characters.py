@@ -16,8 +16,8 @@ class Solution:
                 answer=max(answer,len(curr_String))
                 return
 
-            if calculate_uniq(curr_String,arr[i]):  # calculate whether there are unique characters if yes then proced else not proceed
-                dfs(i+1, len(arr[i])+ len(arr[i+1]))
+            if calculate_uniq(curr_String,arr[i]):  # calculate whether there are unique string if yes then proced else not proceed
+                dfs(i+1, curr_String+arr[i])
 
             dfs(i+1,curr_String) # without adding
 
