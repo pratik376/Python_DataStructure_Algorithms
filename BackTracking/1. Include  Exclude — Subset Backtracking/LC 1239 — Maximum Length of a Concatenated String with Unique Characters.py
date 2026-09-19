@@ -3,28 +3,26 @@ class Solution:
 
         answer=0
 
-        def calculate_uniq(s1,s2):
-            s1,s2= set(s1),set(s2)
+        def calculate_uniq(current,newstring):
 
-            for ch in s1:
+            combined= current + newstring
 
-                if ch in s2:
-                    return False
+            return len(combined) == len(set(combined))
 
-            return True
-
-
-        def dfs(i, uniq_char):
+        def dfs(i, curr_String):
             nonlocal answer
 
             if i >= len(arr):
-                answer=max(answer,uniq_char)
+                answer=max(answer,len(curr_String))
                 return
 
-            if calculate_uniq(arr[i],arr[i+1]):  # calculate whether there are unique characters if yes then proced else not proceed
+            if calculate_uniq(curr_String,arr[i]):  # calculate whether there are unique characters if yes then proced else not proceed
                 dfs(i+1, len(arr[i])+ len(arr[i+1]))
 
-            dfs(i+1, uniq_char) # without adding
+            dfs(i+1,curr_String) # without adding
+
+        dfs(0,"")
+        return answer
 
         
 
