@@ -1,61 +1,76 @@
+from typing import List
 from collections import defaultdict
 
+
 class Solution:
-    def maxScoreWords(self, words: list[str], letters: list[str], score: list[int]) -> int:
+    def maxScoreWords(
+        self,
+        words: List[str],
+        letters: List[str],
+        score: List[int]
+    ) -> int:
+
+        freq = defaultdict(int)
+
+        for ch in letters:
+            freq[ch] += 1
 
 
-        frq = defaultdict(int)
-        answer=0
+        def calculate_word(word, current_freq):
 
-        for word in letters:
+            temp = current_freq.copy()
+            word_score = 0
 
-            frq[word]+=1
+            for ch in word:
 
+                # not enough characters
+                if temp[ch] == 0:
+                    return 0, None
 
-        def calculate_char(current_String):
-            sum=0
+                temp[ch] -= 1
 
-            for ch in current_String:
-                if frq[ch]==0:
-                    return 0
-                frq[ch]-=1
                 idx = ord(ch) - ord('a')
-                sum+= score[idx]
+                word_score += score[idx]
 
-            return sum
-
-        def addingToDict(currentString):
-            for ch in currentString:
-
-                frq[ch]+=1
+            return word_score, temp
 
 
-        def dfs(i, string):
-            nonlocal answer
-            if i>= len(words):
-                return
+        def dfs(i, current_freq):
+
+            if i >= len(words):
+                return 0
 
 
-            # add
+            # -------------------
+            # EXCLUDE words[i]
+            # -------------------
 
-            can_add= calculate_char(words[i])
-            answer+=can_add
-            if can_add:
-
-                dfs(i+1, string+ words[i])
-
-                addingToDict(words[i])
-
-            dfs(i+1, string)
-
-        dfs(0,"")
-        return answer
+            exclude = dfs(
+                i + 1,
+                current_freq
+            )
 
 
+            # -------------------
+            # INCLUDE words[i]
+            # -------------------
 
-            
+            word_score, new_freq = calculate_word(
+                words[i],
+                current_freq
+            )
 
-            
+            include = 0
 
-        
-        
+            if new_freq is not None:
+
+                include = word_score + dfs(
+                    i + 1,
+                    new_freq
+                )
+
+
+            return max(include, exclude)
+
+
+        return dfs(0, freq)
