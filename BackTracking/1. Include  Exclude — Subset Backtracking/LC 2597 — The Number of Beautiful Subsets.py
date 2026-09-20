@@ -16,11 +16,6 @@ class Solution:
             # keep
 
             flag=0
-
-            if len(subset) <1 and nums[i] != k:
-                count+=1
-
-
             for element in subset:
 
                 if abs(element - nums[i])!=k:
@@ -28,6 +23,7 @@ class Solution:
 
             if not flag:
                 count+=1
+
             subset.append(nums[i])
             dfs(i+1, subset)
 
