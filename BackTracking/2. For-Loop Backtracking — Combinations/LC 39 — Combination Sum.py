@@ -6,7 +6,7 @@ class Solution:
 
         def combination(start, comb, current_sum):
 
-            if sum(comb)>target:
+            if current_sum>target:
                 return
             
             if current_sum==target:
