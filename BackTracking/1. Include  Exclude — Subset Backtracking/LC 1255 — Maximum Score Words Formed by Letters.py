@@ -12,15 +12,8 @@ class Solution:
             frq[word]+=1
 
 
-        def calculate_char(string, current_String):
+        def calculate_char(current_String):
             sum=0
-
-            for ch in string:
-                if frq[ch]==0:
-                    return 0
-                frq[ch]-=1
-                idx = ord(ch) - ord('a')
-                sum+= score[idx]
 
             for ch in current_String:
                 if frq[ch]==0:
@@ -45,13 +38,13 @@ class Solution:
 
             # add
 
-            can_add= calculate_char(string,words[i])
-            answer=max(answer,can_add)
+            can_add= calculate_char(words[i])
+            answer+=can_add
             if can_add:
 
                 dfs(i+1, string+ words[i])
 
-                addingToDict(string ,words[i])
+                addingToDict(words[i])
 
             dfs(i+1, string)
 
