@@ -51,7 +51,7 @@ class Solution:
 
                 dfs(i+1, string+ words[i])
 
-                addingToDict(words[i])
+                addingToDict(string ,words[i])
 
             dfs(i+1, string)
 
