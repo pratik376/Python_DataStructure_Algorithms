@@ -4,24 +4,36 @@ from typing import List
 class Solution:
     def beautifulSubsets(self, nums: List[int], k: int) -> int:
 
-       
-        res=[]
+        count =0
         subset=[]
 
-        def dfs(i):
+        def dfs(i,subset):
+            nonlocal count
 
             if i>= len(nums):
-                res.append(subset.copy())
                 return
 
-
             # keep
+
+            flag=0
+
+            if len(subset) <1 and nums[i] != k:
+                count+=1
+
+
+            for element in subset:
+
+                if abs(element - nums[i])!=k:
+                    flag=1
+
+            if not flag:
+                count+=1
             subset.append(nums[i])
-            dfs(i+1)
+            dfs(i+1, subset)
 
             # remove
             subset.pop()
-            dfs(i+1)
+            dfs(i+1,subset)
 
         dfs(0)
             
