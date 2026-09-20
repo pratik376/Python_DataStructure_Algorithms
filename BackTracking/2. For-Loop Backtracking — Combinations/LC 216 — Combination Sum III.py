@@ -15,7 +15,7 @@ class Solution:
             for i in range(start, 10):
 
                 comb.append(i)
-                dfs(i+1, sum +i, comb)
+                dfs(i+1, currentSum +i, comb)
                 comb.pop()
 
         dfs(1,0,[])
