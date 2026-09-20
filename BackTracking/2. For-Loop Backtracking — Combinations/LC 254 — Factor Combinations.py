@@ -13,6 +13,7 @@ class Solution:
 
             if factor==n and len(path) >=2:
                 res.append(path.copy())
+                return
 
             for j in range(i, n+1):
 
@@ -20,7 +21,7 @@ class Solution:
                 dfs(j, path, factor * j)
                 path.pop()
 
-        dfs(1,[],2)
+        dfs(2,[],1)
         return res
 
 
