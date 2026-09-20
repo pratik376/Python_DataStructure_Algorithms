@@ -1,9 +1,12 @@
-def dfs(start):
+def dfs(start, comb):
+
+    if len(comb)==k:
+        # do something
 
     for i in range(start, len(nums)):
 
-        path.append(nums[i])
+        comb.append(nums[i])
 
-        dfs(i + 1)
+        dfs(i + 1, )
 
-        path.pop()
+        comb.pop()
