@@ -9,6 +9,7 @@ class Solution:
 
 
             for i in range(start, len(nums)):
+
                 res.append(path.copy())
 
                 if i > start and nums[i]==nums[i-1]:
@@ -31,17 +32,18 @@ class Solution:
 
         def dfs(start, path):
 
+            if start >= len(nums):
+                res.append(path[::])
+                return
 
-            for i in range(start, len(nums)):
-                res.append(path.copy())
+            path.append(nums[start])
+            dfs(start+1, path)
+            path.pop()
 
-                if i > start and nums[i]==nums[i-1]:
+            while start +1 < len(nums) and nums[start] != nums[start-1]:
+                start+=1
 
-                    continue
-
-                path.append(nums[i])
-                dfs(i+1, path)
-                path.pop()
+            dfs(start+1,path) 
 
         dfs(0,[])
         return res
