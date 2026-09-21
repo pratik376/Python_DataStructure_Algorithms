@@ -17,6 +17,8 @@ class Solution:
 
             for j in range(i, n+1):
 
+                if j * factor > n:
+                    break
                 path.append(j)
                 dfs(j, path, factor * j)
                 path.pop()
