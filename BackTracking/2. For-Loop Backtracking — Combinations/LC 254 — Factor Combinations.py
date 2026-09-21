@@ -19,6 +19,10 @@ class Solution:
 
                 if j * factor > n:
                     break
+
+                if n % (j * factor) !=0:
+                    continue
+                 
                 path.append(j)
                 dfs(j, path, factor * j)
                 path.pop()
