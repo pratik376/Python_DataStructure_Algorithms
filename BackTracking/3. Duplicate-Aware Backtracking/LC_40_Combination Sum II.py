@@ -46,7 +46,8 @@ class Solution:
             dfs(i+1, current_sum + candidates[i], path)
             path.pop()
 
-            while i+1 < len(candidates) and candidates[i] == candidates[i-1]:
+            while i+1 < len(candidates) and candidates[i] == candidates[i+1]:
+                i+=1
                 continue
 
             dfs(i+1, current_sum, path)
