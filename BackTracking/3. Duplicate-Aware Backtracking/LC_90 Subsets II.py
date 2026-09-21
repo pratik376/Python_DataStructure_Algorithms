@@ -40,7 +40,7 @@ class Solution:
             dfs(start+1, path)
             path.pop()
 
-            while start +1 < len(nums) and nums[start] != nums[start-1]:
+            while start +1 < len(nums) and nums[start] == nums[start-1]:
                 start+=1
 
             dfs(start+1,path) 
