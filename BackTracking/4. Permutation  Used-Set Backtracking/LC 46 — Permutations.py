@@ -9,6 +9,7 @@ class Solution:
 
             if len(path) == len(nums):
                 res.append(path[:])
+                return
 
             for i in range(len(nums)):
 
