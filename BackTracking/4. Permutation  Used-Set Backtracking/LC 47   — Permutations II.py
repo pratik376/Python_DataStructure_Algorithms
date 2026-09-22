@@ -14,7 +14,11 @@ class Solution:
 
             for i in range(len(nums)):
 
+
                 if used[i]:
+                    continue
+
+                if i> 0 and nums[i]== nums[i-1] and not used[i-1]:
                     continue
 
                 used[i]=True
@@ -23,12 +27,7 @@ class Solution:
                 dfs(path)
 
                 path.pop()
-
-               
-                while i+1 < len(nums) and nums[i] == nums[i+1]:
-                    used[i]=True
-                    i+=1
-                
+                used[i]=False   
         dfs([])
         return res
                 
