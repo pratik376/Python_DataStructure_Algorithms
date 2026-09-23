@@ -13,8 +13,12 @@ class Solution:
 
         def dfs(position, path):
 
-            if len(path)== n and "".join(path) not in num_set:
-                answer.append("".join(path))
+            if len(path)== n:
+
+                binary= "".join(path)
+
+                if binary not in num_set:
+                    answer.append("".join(path))
                 return
 
             for c in "01":
@@ -23,7 +27,7 @@ class Solution:
                     return
 
                 path.append(c)
-                dfs(position+1)
+                dfs(position+1,path)
                 path.pop()
 
         dfs(0,[])
