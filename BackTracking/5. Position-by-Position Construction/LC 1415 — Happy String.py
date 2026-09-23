@@ -48,6 +48,8 @@ class Solution:
                 if count == k:
                     return  "".join(path)
 
+                return
+
             for c in "abc":
                 
                 if path and c == path[-1]:
