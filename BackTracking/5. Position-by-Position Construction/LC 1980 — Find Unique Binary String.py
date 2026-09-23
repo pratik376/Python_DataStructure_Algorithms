@@ -1,0 +1,36 @@
+class Solution:
+    def findDifferentBinaryString(self, nums: list[str]) -> str:
+
+
+        if not nums:
+            return ""
+
+        num_set= set(nums)
+        n= len(nums[0])
+
+        answer=[]
+
+
+        def dfs(position, path):
+
+            if len(path)== n and path not in num_set:
+                answer.append("".join(path))
+                return
+
+            for c in nums[position]:
+
+                if len(answer)>0:
+                    return
+
+                path.append(c)
+                dfs(position+1)
+                path.pop()
+
+        dfs(0,[])
+        return answer
+
+                
+
+
+
+
