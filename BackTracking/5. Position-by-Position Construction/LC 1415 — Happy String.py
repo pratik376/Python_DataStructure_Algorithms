@@ -57,11 +57,14 @@ class Solution:
 
                 path.append(c)
 
-                dfs(position+1, path)
+                answer = dfs(position+1, path)
+
+                if answer:
+                    return answer
+                
                 path.pop()
+            return ""
 
-        dfs(0,[])
-
-        
-        return ""
+        return dfs(0,[])
+       
 
