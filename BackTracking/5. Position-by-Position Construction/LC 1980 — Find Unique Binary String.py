@@ -17,7 +17,7 @@ class Solution:
                 answer.append("".join(path))
                 return
 
-            for c in nums[position]:
+            for c in "01":
 
                 if answer:
                     return
