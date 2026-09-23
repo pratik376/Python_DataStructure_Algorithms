@@ -29,13 +29,12 @@ class Solution:
 
             if len(path)==len(groups):
 
-                res.append(path[:])
+                res.append("".join(path))
                 return
 
             for ch in groups[position]:
 
                 path.append(ch)
-
                 dfs(position+1, path)
                 path.pop()
 

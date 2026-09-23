@@ -16,7 +16,7 @@ class Solution:
 
             if len(path)==n:
 
-                res.append(path[:])
+                res.append("".join(path))
                 return
             
             for c in  digitToChar[digits[pos]]:
@@ -25,7 +25,7 @@ class Solution:
                 path.pop()
 
         if digits:
-            dfs(0,"")
+            dfs(0,[])
 
         return res
         
