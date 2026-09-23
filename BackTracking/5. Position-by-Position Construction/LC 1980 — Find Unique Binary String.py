@@ -13,13 +13,13 @@ class Solution:
 
         def dfs(position, path):
 
-            if len(path)== n and path not in num_set:
+            if len(path)== n and "".join(path) not in num_set:
                 answer.append("".join(path))
                 return
 
             for c in nums[position]:
 
-                if len(answer)>0:
+                if answer:
                     return
 
                 path.append(c)
@@ -27,7 +27,7 @@ class Solution:
                 path.pop()
 
         dfs(0,[])
-        return answer
+        return "".join(answer)
 
                 
 
