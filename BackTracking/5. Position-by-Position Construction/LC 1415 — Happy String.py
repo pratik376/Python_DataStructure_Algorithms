@@ -17,7 +17,7 @@ class Solution:
                 #     path.pop()
                 #     continue
 
-                if c == path[-1]:
+                if path and c == path[-1]:
                     continue
 
                 path.append(c)
@@ -36,7 +36,6 @@ class Solution:
 class Solution:
     def getHappyString(self, n: int, k: int) -> str:
 
-        res=[]
         count=0
 
         def dfs(position, path):
@@ -51,7 +50,7 @@ class Solution:
 
             for c in "abc":
                 
-                if c == path[-1]:
+                if path and c == path[-1]:
                     continue
 
                 path.append(c)
