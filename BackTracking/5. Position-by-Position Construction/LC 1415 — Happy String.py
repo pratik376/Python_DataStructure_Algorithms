@@ -9,14 +9,19 @@ class Solution:
                 res.append("".join(path))
                 return
 
-
             for c in "abc":
                 
+                # path.append(c)
+
+                # if position> 0 and path[position]==path[position-1]:
+                #     path.pop()
+                #     continue
+
+                if c == path[-1]:
+                    continue
+
                 path.append(c)
 
-                if position> 0 and path[position]==path[position-1]:
-                    path.pop()
-                    continue
                 dfs(position+1, path)
                 path.pop()
 
@@ -26,3 +31,36 @@ class Solution:
             return ""
 
         return res[k-1]
+
+
+class Solution:
+    def getHappyString(self, n: int, k: int) -> str:
+
+        res=[]
+        count=0
+
+        def dfs(position, path):
+            nonlocal count
+
+            if len(path)== n:
+
+                count+=1
+
+                if count == k:
+                    return  "".join(path)
+
+            for c in "abc":
+                
+                if c == path[-1]:
+                    continue
+
+                path.append(c)
+
+                dfs(position+1, path)
+                path.pop()
+
+        dfs(0,[])
+
+        
+        return ""
+
