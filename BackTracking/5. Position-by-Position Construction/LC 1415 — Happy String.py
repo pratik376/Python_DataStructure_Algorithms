@@ -32,7 +32,7 @@ class Solution:
 
         return res[k-1]
 
-
+# 39 mins
 class Solution:
     def getHappyString(self, n: int, k: int) -> str:
 
