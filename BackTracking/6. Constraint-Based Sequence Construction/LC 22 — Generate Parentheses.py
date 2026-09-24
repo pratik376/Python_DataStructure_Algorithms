@@ -26,6 +26,46 @@ class Solution:
 
         def dfs(open, close, path):
 
+            if len (path) == 2 * n:
+
+                res.append( "".join(path))
+                return
+
+
+            for c in "()":
+                temp_open= open
+                temp_close=close
+
+                if c=='(':
+                    open+=1
+
+                if c==")":
+                    close+=1
+
+                if close > open or open > n:
+
+                    open=temp_open
+                    close= temp_close
+                    continue
+
+                path.append(c)
+                dfs(open,close,path)
+                path.pop()
+                open= temp_open
+                close=temp_close
+                
+        dfs(0,0,[])
+        return res
+
+
+class Solution:
+    def generateParenthesis(self, n: int) -> list[str]:
+
+        res=[]
+
+
+        def dfs(open, close, path):
+
 
             if len(path) == 2 * n:
 
