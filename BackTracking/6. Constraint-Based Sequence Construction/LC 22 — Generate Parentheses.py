@@ -26,6 +26,7 @@ class Solution:
 
         def dfs(open, close, path):
 
+
             if len(path) == 2 * n:
 
                 res.append("".join(path))
@@ -34,19 +35,25 @@ class Solution:
             for c in "()":
 
                 if c=="(":
-                    open+=1
+
+                    if open >=n:
+                        continue
+
+                    path.append(c)
+
+                    dfs(open+1, close, path)
                 else:
-                    close+=1
 
-                if close>open:
-                    continue
+                    if close >=open:
+                        continue
 
-                path.append(c)
-                dfs(open,close,path)
+                    path.append(c)
+                    dfs(open,close+1, path)
+ 
                 path.pop()
 
-            dfs(0,0,[])
-            return res
+        dfs(0,0,[])
+        return res
 
                 
         
