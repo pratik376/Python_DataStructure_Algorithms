@@ -2,15 +2,13 @@ class Solution:
     def maxUniqueSplit(self, s: str) -> int:
 
         count=0
-        used={}
+        used=set()
 
         def dfs(start, path):
             nonlocal count
 
             if start== len(s):
-
-                if len(path)==len(set(path)):
-                    count+=1
+                count= max(count, len(path))
                 return
 
             for end in range(start+1 , len(s)+1):
