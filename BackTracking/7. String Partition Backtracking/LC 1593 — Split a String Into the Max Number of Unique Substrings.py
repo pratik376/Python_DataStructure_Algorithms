@@ -7,7 +7,10 @@ class Solution:
             nonlocal count
 
             if start== len(s):
-                count+=1
+
+                if len(path)==len(set(path)):
+                    count+=1
+                return
 
             for end in (start+1 , len(s)+1):
 
