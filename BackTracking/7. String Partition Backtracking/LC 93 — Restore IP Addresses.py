@@ -14,14 +14,20 @@ class Solution:
                 answer.append( ".".join(path.copy()))
                 return
 
-            if len(path)>4:
+            if len(path)==4:
                 return
 
             for end in range(start+1, len(s)+1):
 
                 pices= s[start:end]
 
-                if len(pices) > 0 and pices[0]==0:
+                if len(pices) > 1 and pices[0]=='0':
+                    continue
+
+                if len(pices) > 3:
+                    continue
+
+                if int(pices) >255:
                     continue
     
                 path.append(pices)
