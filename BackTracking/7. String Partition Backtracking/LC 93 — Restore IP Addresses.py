@@ -9,7 +9,7 @@ class Solution:
         def dfs(start, path):
 
 
-            if len(path)==4:
+            if len(path)==4 and start==len(s):
 
                 answer.append( ".".join(path.copy()))
                 return
