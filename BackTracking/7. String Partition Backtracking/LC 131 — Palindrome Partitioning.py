@@ -13,7 +13,7 @@ class Solution:
 
                 pieces=s[start:end]
 
-                if pieces==pieces[::-1]:
+                if pieces==pieces[::-1]: # to potimize it write sperate function for palindrome check
 
                     path.append(pieces)
                     dfs(end,path)
