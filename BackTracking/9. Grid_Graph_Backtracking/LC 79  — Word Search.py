@@ -13,16 +13,10 @@ class Solution:
                 return True
             if (
                 r < 0 or r >= ROWS
-                or c < 0 or c >= COLS
+                or c < 0 or c >= COLS or (r, c) in visited  or board[r][c] != word[i]
             ):
                 return False
-
-            if (r, c) in visited:
-                return False
-
-            if board[r][c] != word[i]:
-                return False
-
+            
             visited.add((r,c))
  
             for R,C in directions:
