@@ -8,8 +8,7 @@ class Solution:
             return False
 
         matchsticks.sort(reverse=True)
-
-
+        
         def backtrack (i):
 
             if i == len(matchsticks):
