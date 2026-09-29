@@ -34,7 +34,7 @@ class Solution:
 
                 if dfs( nr,nc, i +1):
                     return True
-                visited.remove((nr,nc))
+            visited.remove((r,c))
             return False
 
 
