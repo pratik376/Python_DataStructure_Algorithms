@@ -18,7 +18,7 @@ class Solution:
 
                 piece=s[start:end]
 
-                if path and int(path[-1])-int(piece)==1:
+                if not path or path and int(path[-1])-int(piece)==1:
 
                     path.append(piece)
 
