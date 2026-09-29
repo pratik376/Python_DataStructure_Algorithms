@@ -8,13 +8,9 @@ class Solution:
 
         def dfs (start, path):
 
-
-            if len(res)>=2:
-                return True
-
             if start==len(s):
-                res.append(path.copy())
-                return
+             
+                return len(path) >=2
 
 
             for end in range(start+1, len(s)+1):
@@ -22,7 +18,7 @@ class Solution:
 
                 piece=s[start:end]
 
-                if int(path[-1])-int(piece)==1:
+                if path and int(path[-1])-int(piece)==1:
 
                     path.append(piece)
 
