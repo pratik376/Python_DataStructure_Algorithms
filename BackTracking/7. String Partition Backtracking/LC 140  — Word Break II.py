@@ -8,7 +8,7 @@ class Solution:
 
         def dfs(start, path):
 
-            if start== len(str):
+            if start== len(s):
 
                 res.append(" ".join(path))
 
