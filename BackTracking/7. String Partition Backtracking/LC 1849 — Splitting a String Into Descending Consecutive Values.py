@@ -22,9 +22,9 @@ class Solution:
 
                 piece=s[start:end]
 
-                if int(path)-int(piece)==1:
+                if int(path[-1])-int(piece)==1:
 
-                    path.add(piece)
+                    path.append(piece)
 
                     if dfs(end,path):
                         return True
