@@ -9,7 +9,7 @@ class Solution:
 
         def dfs (r,c, i):
 
-            if i == len(word):
+            if i == len(word)-1:
                 return True
             if (
                 r < 0 or r >= ROWS
