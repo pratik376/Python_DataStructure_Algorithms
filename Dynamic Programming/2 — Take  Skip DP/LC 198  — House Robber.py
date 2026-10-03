@@ -5,7 +5,7 @@ class Solution:
 
         for n in nums:
 
-            temp= (n+rob1 ,rob2)
+            temp= max(n+rob1 ,rob2)
             rob1=rob2
             rob2=temp
 
