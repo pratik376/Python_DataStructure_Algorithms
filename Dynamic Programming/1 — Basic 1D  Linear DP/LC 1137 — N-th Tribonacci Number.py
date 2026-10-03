@@ -12,8 +12,10 @@ class Solution:
 
         for i in range(3,n+1):
 
-            sum_array[i]= sum(sum_array[:i]) - sum(sum_array[i-3])
-            
+            sum_array[i]= sum(sum_array[i-3:i])   
+
+
+        return sum_array[n-1]         
 
 
 
