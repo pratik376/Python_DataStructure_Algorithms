@@ -12,4 +12,17 @@ class Solution:
 
             curr_earn= nums[i] * count[nums[i]]
 
-            
+            if i >0 and nums[i] == nums[i-1]+1:
+
+                temp=earn2
+                earn2= max(curr_earn+earn1,earn2)
+                earn1=temp
+
+            else:
+
+                temp= earn2
+                earn2= curr_earn + earn2
+                earn1=temp
+
+        return earn2
+
