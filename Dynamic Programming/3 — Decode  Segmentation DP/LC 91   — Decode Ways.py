@@ -6,6 +6,7 @@ class Solution:
 
 
         def dfs(start):
+            nonlocal count
 
             if start == len(s):
                 count +=1
@@ -16,4 +17,12 @@ class Solution:
 
                 pices= s[start:end]
 
-                
+                if int(pices[0])==0:
+                    continue
+
+                dfs(end)
+
+        dfs(0)
+        return count
+        
+
